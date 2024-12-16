@@ -52,14 +52,16 @@ body {
 .frame-home {
     font-family: "Poppins", sans-serif;
     max-width: 480px;
+    min-height: 100vh; /* Agar elemen bisa lebih tinggi jika konten melebihi viewport */
     width: 100%;
-    height: 1000px;
+    height: auto;    
     margin: 0 auto;
     background-color: #fff;
     padding: 1rem;
-    /* box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); */
     display: flex;
     flex-direction: column;
+    box-sizing: border-box; /* Padding tidak merusak layout */
+    padding-bottom: 90px;
 }
 
 @media (min-height: 1000px) {
@@ -477,3 +479,42 @@ body {
     font-weight: 400;
     margin: 0px;
 }
+
+.card-article{
+    margin-top: 12px;
+    border-radius: 7px;
+    width: 100%;
+    height: 160px;
+    max-height: 200px;
+    background-color: white;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
+}
+
+.photo-article-card{
+    width: 100%;
+    height: 109px;
+    border-radius: 7px 7px 0px 0px;
+}
+
+.photo-article-card img{
+    border-radius: 7px 7px 0px 0px;
+    object-fit: cover;
+    width: 100%;
+    height: 109px;
+}
+
+
+.title-article-card{
+    width: 100%;
+    padding-left: 9px;
+    padding-top: 8px;
+    padding-right: 9px;
+    padding-bottom: 3px;
+}
+
+
+.title-article-card h1{
+    font-weight: 500;
+    font-size: 12px;
+}
+

@@ -202,6 +202,26 @@
                     </div>
                 </div>
                 <p class="sub-article-widget">Jelajahi info seputar fesyen di <span style="color:#FFB30D">Eco</span><span style="color:#01ADB5">Clothes</span></p>
+
+                <div class="card-article">
+                    <div class="photo-article-card">
+                        <img src="https://serayunews.pw/wp-content/uploads/2024/03/image-190-768x512-1.png" alt="">
+                    </div>
+
+                    <div class="title-article-card">
+                        <h1>Jangan Disepelekan! Ini Dampak Fast Fashion dan Perilaku Konsumtif Pada Ancaman Limbah Pakaian</h1>
+                    </div>
+                </div>
+
+                <div class="card-article">
+                    <div class="photo-article-card">
+                        <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2022/10/piles-of-used-clothes.jpg" alt="">
+                    </div>
+
+                    <div class="title-article-card">
+                        <h1>Perilaku Konsumtif Beli Pakaian Bisa Berdampak Buruk bagi Lingkungan</h1>
+                    </div>
+                </div>
             </div>
         </section>
         

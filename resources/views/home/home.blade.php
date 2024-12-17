@@ -166,7 +166,7 @@
                         <h3><span style="color:#FFB30D">Eco</span><span style="color:#01ADB5">Clothes</span> baru baru ini</h3>
                     </div>
                     <div class="selengkapnya">
-                        <a style="text-decoration: none !important;" href="/transaction"><p>Selengkapnya</p></a>
+                        <a style="text-decoration: none !important;" href="/transaction/inprogres"><p>Selengkapnya</p></a>
                     </div>
                 </div>
                 <p>Menampilkan transaksi coinmu yang terbaru</p>
@@ -246,7 +246,7 @@
                 <p>Merchant</p>
             </div>
             <div class="transaksi dea text-center">
-                <a href="/transaction">
+                <a href="/transaction/inprogres">
                     <svg class="w-6 h-6 text-gray-800 dark:text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="#CFCFCF" viewBox="0 0 24 24">
                         <path fill-rule="evenodd" d="M9 2.221V7H4.221a2 2 0 0 1 .365-.5L8.5 2.586A2 2 0 0 1 9 2.22ZM11 2v5a2 2 0 0 1-2 2H4v11a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2h-7ZM8 16a1 1 0 0 1 1-1h6a1 1 0 1 1 0 2H9a1 1 0 0 1-1-1Zm1-5a1 1 0 1 0 0 2h6a1 1 0 1 0 0-2H9Z" clip-rule="evenodd"/>
                       </svg>

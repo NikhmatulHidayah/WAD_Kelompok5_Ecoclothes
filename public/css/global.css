@@ -70,6 +70,7 @@ body {
     }
 }
 
+
 @media (max-width: 480px) {
     .frame {
         padding: 0.5rem;
@@ -239,6 +240,18 @@ body {
     background-color: #01ADB5;
 
 }
+
+.background-header-box-trx{
+    position: fixed;
+    max-width: 480px;
+    top:0;
+    z-index: 1;
+    height:16%;
+    width: 100%;
+    background-color: #01ADB5;
+
+}
+
 .component-header{
     width: 100%;
     display: flex;
@@ -516,5 +529,25 @@ body {
 .title-article-card h1{
     font-weight: 500;
     font-size: 12px;
+}
+
+.title-head-trx{
+    width: 100%;
+    padding: 8%;
+}
+
+.title-head-trx h1{
+    font-size: 20px;
+    font-weight: 500;
+    color: white;
+}
+
+.tab-trx{
+    background-color:red;
+}
+
+.background-header-box-trx{
+    padding:0px;
+    margin: 0px;
 }
 

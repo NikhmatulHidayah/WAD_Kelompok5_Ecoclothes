@@ -252,6 +252,21 @@ body {
 
 }
 
+.background-header-box-event{
+    position: fixed;
+    max-width: 480px;
+    top:0;
+    z-index: 1;
+    height:10%;
+    width: 100%;
+    background-color: #01ADB5;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+
+}
+
 .component-header{
     width: 100%;
     display: flex;
@@ -531,9 +546,20 @@ body {
     font-size: 12px;
 }
 
+.title-head-event{
+    width: 100%;
+}
+
+.title-head-event h1{
+    font-size: 16px;
+    font-weight: 500;
+    color: white;
+}
+
 .title-head-trx{
     width: 100%;
     padding: 8%;
+    height: 8%;
 }
 
 .title-head-trx h1{

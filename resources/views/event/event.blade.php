@@ -17,8 +17,8 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/tzm9JFR/image.png">
 </head>
 <body>
-    <div class="background-header-box-trx">
-        <div class="title-head-trx">
+    <div class="background-header-box-event">
+        <div class="title-head-event">
             <h1>Aktif bersama EcoClothes</h1>
         </div>
     </div>

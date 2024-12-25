@@ -17,7 +17,8 @@
 <body>
     <div class="frame">
         <header class="header gap-3">
-          <div class="auth-head select-active">
+        <div class="cta-auth d-flex gap-3">
+        <div class="auth-head select-active">
             <a href="/register"><h1>Daftar</h1></a>
             <div class="underline-active"></div>
           </div>
@@ -25,6 +26,7 @@
             <a href="/login"><h1>Masuk</h1></a>
             <div class="underline-deactive"></div>
           </div>
+        </div>
         </header>
 
         <section class="hero mt-4">

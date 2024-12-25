@@ -256,7 +256,7 @@ body {
     position: fixed;
     max-width: 480px;
     top:0;
-    z-index: 1;
+    z-index: 2;
     height:10%;
     width: 100%;
     background-color: #01ADB5;
@@ -524,12 +524,24 @@ body {
     border-radius: 7px 7px 0px 0px;
 }
 
+.photo-detail-event{
+    width: 100%;
+    height: 150px;
+}
+.photo-detail-event img{
+    border-radius: 7px;
+    object-fit: cover;
+    width: 100%;
+    height: 200px;
+}
+
 .photo-article-card img{
     border-radius: 7px 7px 0px 0px;
     object-fit: cover;
     width: 100%;
-    height: 109px;
+    height: 200px;
 }
+
 
 
 .title-article-card{
@@ -540,10 +552,43 @@ body {
     padding-bottom: 3px;
 }
 
+.title-event-card{
+    width: 100%;
+    padding-left: 9px;
+    padding-top: 8px;
+    padding-right: 9px;
+    padding-bottom: 3px;
+}
+
+.title-event-card h1{
+    font-weight: 500;
+    font-size: 10px;
+}
+
 
 .title-article-card h1{
     font-weight: 500;
     font-size: 12px;
+}
+
+.sub-event h3{
+    font-weight: 400;
+    font-size: 10px;
+   
+    color: #7E7E7E;
+}
+.sub-event h4{
+    font-weight: 500;
+    font-size: 10px;
+    color:#01ADB5;
+}
+
+
+.time-event h3{
+    font-weight: 500;
+    font-size: 10px;
+    color:#01ADB5;
+
 }
 
 .title-head-event{
@@ -554,6 +599,7 @@ body {
     font-size: 16px;
     font-weight: 500;
     color: white;
+    margin-top: 10px;
 }
 
 .title-head-trx{
@@ -588,3 +634,54 @@ body {
     color: white;
 }
 
+.card-event{
+    width: 100%;
+    height: 219px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
+    border-radius: 7px;
+}
+
+.button-join button{
+    width: 64px;
+    height: 21px;
+    color: white;
+    background-color: #FFB30D;
+    font-size: 9px;
+    padding: 0px;
+}
+
+.footer-card-event{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.time-event{
+    margin-top: 6px;
+}
+
+
+.btn-join:hover {
+    color: #fff !important;
+    text-decoration: none;
+    background-color: #FFB30D;
+}
+
+.information-event{
+    margin-top:70px;
+}
+
+.information-event h1{
+    font-size: 16px;
+
+}
+
+.form-regist-event label{
+    font-size: 12px;
+}
+
+.form-regist-event input{
+    height: 34px;
+    font-size: 12px;
+}

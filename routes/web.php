@@ -15,3 +15,4 @@ Route::get('/register', [authController::class, 'getRegister']);
 Route::get('/transaction/inprogres', [transactionController::class, 'getTrxInprogres']);
 
 Route::get('/event', [eventController::class, 'getEvent']);
+Route::get('/event/uuid', [eventController::class, 'getRegistEvent']);

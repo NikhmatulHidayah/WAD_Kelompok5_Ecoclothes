@@ -57,10 +57,11 @@ body {
     height: auto;
     margin: 0 auto;
     background-color: #fff;
-    padding: 0; /* Menghapus padding agar peta memenuhi seluruh frame-home */
+    padding: 1rem;    
     display: flex;
     flex-direction: column;
     box-sizing: border-box; /* Padding tidak merusak layout */
+    padding-bottom: 90px;
 }
 
 @media (min-height: 1000px) {

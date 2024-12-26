@@ -5,6 +5,7 @@ use App\Http\Controllers\authController;
 use App\Http\Controllers\homeController;
 use App\Http\Controllers\transactionController;
 use App\Http\Controllers\eventController;
+use App\Http\Controllers\productController;
 
 
 Route::get('/', [homeController::class, 'getHome']);
@@ -16,3 +17,6 @@ Route::get('/transaction/inprogres', [transactionController::class, 'getTrxInpro
 
 Route::get('/event', [eventController::class, 'getEvent']);
 Route::get('/event/uuid', [eventController::class, 'getRegistEvent']);
+
+
+Route::get('/merchant/all', [productController::class, 'getAllMerchant']);

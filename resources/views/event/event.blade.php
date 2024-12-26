@@ -31,6 +31,7 @@
     </div>
     <div class="frame-home">
         <header class="hero" style="margin-top:15%;">
+            <br>
             <div class="card-event mb-3">
                 <div class="photo-article-card">
                     <img src="https://assets-a1.kompasiana.com/items/album/2021/12/28/kreasi-tas-olahan-kain-perca-dengan-aksen-bordir-karya-ibu-rumah-tangga-asal-malang-eva-sophia-hidayatip6gl-61ca093f06310e5f8818a302.jpg" alt="">

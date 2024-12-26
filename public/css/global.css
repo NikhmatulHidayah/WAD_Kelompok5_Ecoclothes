@@ -54,14 +54,13 @@ body {
     max-width: 480px;
     min-height: 100vh; /* Agar elemen bisa lebih tinggi jika konten melebihi viewport */
     width: 100%;
-    height: auto;    
+    height: auto;
     margin: 0 auto;
     background-color: #fff;
-    padding: 1rem;
+    padding: 0; /* Menghapus padding agar peta memenuhi seluruh frame-home */
     display: flex;
     flex-direction: column;
     box-sizing: border-box; /* Padding tidak merusak layout */
-    padding-bottom: 90px;
 }
 
 @media (min-height: 1000px) {
@@ -202,6 +201,21 @@ body {
     border: none;
 }
 
+.btn-daftar-event {
+    width: 100%;
+    height: 50px;
+    margin-top: 10%;
+}
+
+.btn-daftar-event button {
+    width: 100%;
+    background-color: #01adb5;
+    color: white;
+    height: 43px;
+    border-radius: 7px;
+    border: none;
+}
+
 .container-menus {
     max-width: 480px;
     width: 100%;
@@ -211,7 +225,7 @@ body {
     position: fixed;
     bottom: 0;
     left: 50%;
-    transform: translateX(-50%); /* Hanya menggeser secara horizontal */
+    transform: translateX(-50%);
     background-color: #ffffff;
     z-index: 1000;
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
@@ -265,6 +279,19 @@ body {
     align-items: center;
     padding-left: 1rem;
 
+}
+
+.background-header-box-merchant{
+    position: fixed;
+    max-width: 480px;
+    top:0;
+    z-index: 2;
+    height:100px;
+    width: 100%;
+    background-color: #FFFFFF;
+    padding: 5px;
+    padding-left: 1rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
 }
 
 .component-header{
@@ -539,7 +566,7 @@ body {
     border-radius: 7px 7px 0px 0px;
     object-fit: cover;
     width: 100%;
-    height: 200px;
+    height: 110px;
 }
 
 
@@ -684,4 +711,118 @@ body {
 .form-regist-event input{
     height: 34px;
     font-size: 12px;
+}
+
+.information-event p{
+    font-size: 12px;
+}
+
+#map { width: 100%; height: 100vh; }
+
+.map-container {
+    flex: 1; /* Agar map-container memenuhi sisa ruang di frame-search */
+    position: relative;
+}
+
+.frame-search {
+    font-family: "Poppins", sans-serif;
+    max-width: 480px;
+    min-height: 100vh; /* Agar elemen bisa lebih tinggi jika konten melebihi viewport */
+    width: 100%;
+    height: auto;
+    margin: 0 auto;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box; /* Padding tidak merusak layout */
+    overflow: hidden; /* Mencegah elemen keluar dari frame */
+}
+
+.show-modal {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  color: #fff;
+  border-radius: 6px;
+  font-size: 1.2rem;
+  padding: 15px 22px;
+  background: #4A98F7;
+  display: none;
+  transition: 0.3s ease;
+  box-shadow: 0 10px 18px rgba(52,87,220,0.18);
+}
+.bottom-sheet {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  display: flex;
+  opacity: 0;
+  pointer-events: none;
+  align-items: center;
+  flex-direction: column;
+  justify-content: flex-end;
+  transition: 0.1s linear;
+}
+.bottom-sheet.show {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.bottom-sheet .content {
+  width: 480px;
+  position: relative;
+  background: #fff;
+  max-height: 700px;
+  height: 50vh;
+  max-width: 1150px;
+  padding: 25px 30px;
+  transform: translateY(100%);
+  border-radius: 12px 12px 0 0;
+  box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+  transition: 0.3s ease;
+}
+.bottom-sheet.show .content{
+  transform: translateY(0%);
+}
+.bottom-sheet.dragging .content {
+  transition: none;
+}
+.bottom-sheet.fullscreen .content {
+  border-radius: 0;
+  overflow-y: hidden;
+}
+.bottom-sheet .header {
+  display: flex;
+  justify-content: center;
+}
+.header .drag-icon {
+  cursor: grab;
+  user-select: none;
+  padding: 15px;
+  margin-top: -35px;
+}
+.header .drag-icon span {
+  height: 4px;
+  width: 40px;
+  display: block;
+  background: #01ADB5;
+  border-radius: 50px;
+}
+.bottom-sheet .body {
+  height: 100%;
+  overflow-y: auto;
+  padding: 15px 0 40px;
+  scrollbar-width: none;
+}
+.bottom-sheet .body::-webkit-scrollbar {
+  width: 0;
+}
+.bottom-sheet .body h2 {
+  font-size: 1.8rem;
+}
+.bottom-sheet .body p {
+  margin-top: 20px;
+  font-size: 1.05rem;
 }

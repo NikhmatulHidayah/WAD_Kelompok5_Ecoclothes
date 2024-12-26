@@ -17,34 +17,45 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/tzm9JFR/image.png">
 </head>
 <body>
-    <div class="background-header-box-trx">
-        <div class="title-head-trx">
+<div class="background-header-box-event gap-4">
+        <div class="title-head-event">
             <h1>Aktivitas Transaksi</h1>
-        </div>
-        <div class="tab-trx">
-            <div class="status">
-                <H1>DALAM PROSES</H1>
-            </div>
-            <div class="status">
-                <h1>SELESAI</h1>
-            </div>
         </div>
     </div>
     <div class="frame-home">
-        <header class="hero" style="margin-top:25%;">
-        <div class="card-widget-transaction d-flex gap-3">
-                    <div class="icon-widget-trx">
-                        <img src="https://cdn-icons-png.flaticon.com/512/10693/10693001.png" alt="">
-                    </div>
-                    <div class="content-widget-trx">
-                        <h4>Nikhmatul Hidayah</h4>
-                        <h5><span style="color:#28CD41">Mengisi</span> 1 coin tukar</h5>
-                        <h6>13 Juni 2024</h6>
-                    </div>
-
+        <header class="hero" style="margin-top:15%;">
+            <div class="card-widget-transaction d-flex gap-3">
+                <div class="icon-widget-trx">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10693/10693001.png" alt="">
                 </div>
+                <div class="content-widget-trx">
+                    <h4>Nikhmatul Hidayah</h4>
+                    <h5><span style="color:#28CD41">Mengisi</span> 1 coin tukar</h5>
+                    <h6>13 Juni 2024</h6>
+                </div>
+            </div>
+            <div class="card-widget-transaction d-flex gap-3">
+                <div class="icon-widget-trx">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10693/10693001.png" alt="">
+                </div>
+                <div class="content-widget-trx">
+                    <h4>Nikhmatul Hidayah</h4>
+                    <h5><span style="color:#28CD41">Mengisi</span> 1 coin tukar</h5>
+                    <h6>13 Juni 2024</h6>
+                </div>
+            </div>
+            <div class="card-widget-transaction d-flex gap-3">
+                <div class="icon-widget-trx">
+                    <img src="https://cdn-icons-png.flaticon.com/512/10693/10693001.png" alt="">
+                </div>
+                <div class="content-widget-trx">
+                    <h4>Nikhmatul Hidayah</h4>
+                    <h5><span style="color:#28CD41">Mengisi</span> 1 coin tukar</h5>
+                    <h6>13 Juni 2024</h6>
+                </div>
+            </div>
         </header>
-   
+
         <div class="container-menus">
             <div class="home dea text-center">
                 <a href="/">

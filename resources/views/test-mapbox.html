@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Current Location with Mapbox</title>
+    <link href="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.css" rel="stylesheet">
+    <style>
+        body { margin: 0; padding: 0; }
+        #map { width: 100%; height: 100vh; }
+        #locationButton {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background-color: white;
+            border: none;
+            padding: 10px 15px;
+            font-size: 16px;
+            cursor: pointer;
+            z-index: 1;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+            margin-top:300px
+        }
+        #locationButton:hover {
+            background-color: #f0f0f0;
+        }
+    </style>
+</head>
+<body>
+    <button id="locationButton">Current Location</button>
+    <div id="map"></div>
+
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.15.0/mapbox-gl.js"></script>
+    <script>
+        // Mapbox access token
+        mapboxgl.accessToken = 'pk.eyJ1Ijoic2F0cmlvd3J3ciIsImEiOiJjbTUzaW4wZmQxOXVpMmlwdXllbTdtbDQ2In0.i9T3GHlbf0Rc7INLrpoRPw';
+
+        // Initialize the map
+        const map = new mapboxgl.Map({
+            container: 'map',
+            style: 'mapbox://styles/mapbox/streets-v11', // Map style
+            center: [0, 0], // Initial map center [lng, lat]
+            zoom: 2 // Initial zoom level
+        });
+
+        // Check if geolocation is available
+        if ('geolocation' in navigator) {
+            const locateUser = () => {
+                navigator.geolocation.getCurrentPosition(
+                    (position) => {
+                        const { latitude, longitude } = position.coords;
+
+                        // Update map center to user's location
+                        map.setCenter([longitude, latitude]);
+                        map.setZoom(14);
+
+                        // Add a marker at the user's location
+                        new mapboxgl.Marker()
+                            .setLngLat([longitude, latitude])
+                            .addTo(map);
+                    },
+                    (error) => {
+                        console.error('Error fetching location:', error);
+                        alert('Unable to fetch your location. Please ensure location access is enabled.');
+                    }
+                );
+            };
+
+            // Add event listener to the button
+            document.getElementById('locationButton').addEventListener('click', locateUser);
+        } else {
+            alert('Geolocation is not supported by your browser.');
+        }
+    </script>
+</body>
+</html>

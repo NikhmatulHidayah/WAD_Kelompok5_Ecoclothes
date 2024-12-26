@@ -31,7 +31,7 @@
     </div>
     <div class="frame-home">
         <header class="hero" style="margin-top:15%;">
-            <div class="photo-detail-event">
+            <div class="photo-detail-event  mt-3">
                 <img src="https://assets-a1.kompasiana.com/items/album/2021/12/28/kreasi-tas-olahan-kain-perca-dengan-aksen-bordir-karya-ibu-rumah-tangga-asal-malang-eva-sophia-hidayatip6gl-61ca093f06310e5f8818a302.jpg" alt="">
             </div>
             <div class="information-event">
@@ -52,8 +52,12 @@
                       <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
                     <div class="mb-2">
-                      <label for="exampleInputPassword1" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="exampleInputPassword1">
+                      <label for="exampleInputPassword1" class="form-label">EcoClothes ID</label>
+                      <input disabled type="text" class="form-control" value="nikhmut">
+                    </div>
+
+                    <div class="btn-daftar-event">
+                        <button type="submit">Daftar</button>
                     </div>
                 </form>
             </div>

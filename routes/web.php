@@ -20,3 +20,4 @@ Route::get('/event/uuid', [eventController::class, 'getRegistEvent']);
 
 
 Route::get('/merchant/all', [productController::class, 'getAllMerchant']);
+Route::get('/merchant/uuid', [productController::class, 'getDetailMerchant']);

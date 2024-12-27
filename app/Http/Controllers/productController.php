@@ -9,4 +9,7 @@ class productController extends Controller
     public function getAllMerchant(){
         return view("merchant.search");
     }
+    public function getDetailMerchant(){
+        return view("merchant.detail");
+    }
 }

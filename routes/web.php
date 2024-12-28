@@ -6,6 +6,7 @@ use App\Http\Controllers\homeController;
 use App\Http\Controllers\transactionController;
 use App\Http\Controllers\eventController;
 use App\Http\Controllers\productController;
+use App\Http\Controllers\merchantController;
 
 
 Route::get('/', [homeController::class, 'getHome']);
@@ -21,3 +22,6 @@ Route::get('/event/uuid', [eventController::class, 'getRegistEvent']);
 
 Route::get('/merchant/all', [productController::class, 'getAllMerchant']);
 Route::get('/merchant/uuid', [productController::class, 'getDetailMerchant']);
+Route::get('/merchant/uuid/product/id_product', [productController::class, 'getDetailProduct']);
+
+Route::get('/admin/merchant/order/all', [merchantController::class, 'getAllOrder']);

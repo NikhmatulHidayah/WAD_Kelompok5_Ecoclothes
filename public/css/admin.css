@@ -1,0 +1,18 @@
+body{
+    font-family: "Poppins", sans-serif;
+}
+.title h1{
+    font-size: 24px;
+}
+
+.form-floating{
+    width: 50%;
+}
+
+.card-order{
+    padding: 8px;
+    width: 500px;
+    height: 100px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
+    border-radius: 7px;
+}

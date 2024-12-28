@@ -232,6 +232,22 @@ body {
     box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
     padding: 10px 20px;
   }
+
+.container-checkout-payment {
+    max-width: 480px;
+    width: 100%;
+    height: 129px;
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    background-color: #ffffff;
+    z-index: 1000;
+    box-shadow: 0px -2px 5px rgba(0, 0, 0, 0.1);
+    padding-top:12px;
+    padding-left: 20px;
+    padding-right: 20px;
+  }
   
 .container-menus .dea p{
   font-size: 12;
@@ -275,6 +291,21 @@ body {
     height:10%;
     width: 100%;
     background-color: #01ADB5;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    padding-left: 1rem;
+
+}
+
+.background-header-box-merchant-detail{
+    position: fixed;
+    max-width: 480px;
+    top:0;
+    z-index: 2;
+    height:10%;
+    width: 100%;
+    background-color: white;
     padding: 5px;
     display: flex;
     align-items: center;
@@ -646,6 +677,17 @@ body {
     margin-top: 10px;
 }
 
+.title-head-merchant{
+    width: 100%;
+}
+
+.title-head-merchant h1{
+    font-size: 16px;
+    font-weight: 500;
+    color: black;
+    margin-top: 10px;
+}
+
 .title-head-trx{
     width: 100%;
     padding: 8%;
@@ -908,4 +950,254 @@ body {
 
 .bottom-sheet .body a{
     text-decoration: none;
+}
+
+.image-merchant-list {
+    width: 289px;
+    height: 142px;
+}
+
+.image-merchant-list img {
+    width: 289px;
+    height: 142px;
+    border-radius: 4px;
+}
+
+.image-slider {
+    width: 100%;
+    overflow: hidden;
+}
+
+.swiper-wrapper {
+    display: flex;
+}
+
+.swiper-slide {
+    flex-shrink: 0;
+    width: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.information-detail-merchant{
+    width: 232px;
+    height: 99px;
+    margin-top: 20px;
+}
+
+.information-detail-merchant h1{
+    font-size: 16px;
+    font-weight: 500;
+    color: #1C1C1E;
+}
+.information-detail-merchant h2{
+    font-size: 12px;
+    font-weight: 400;
+    color: #777778;
+}
+.information-detail-merchant h3{
+    font-size: 12px;
+    font-weight: 600;
+    color: #28CD41;
+}
+.information-detail-merchant h4{
+    font-size: 12px;
+    font-weight: 500;
+    color: #777778;
+}
+
+.head-isi-lemari{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.head-isi-lemari .title h1{
+    font-size: 14px;
+    font-weight: 500;
+    color: #1C1C1E;
+}
+
+.product-top-10{
+    margin-top: 16px;
+}
+.product-top-list{
+    margin-top: 5px;
+    width: 140px;
+    height: 191px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 4px 0px #0000001A;
+    padding: 8px;    
+}
+
+.image-prodduct-list img{
+    width: 125px;
+    height: 107px;
+    border-radius: 10px;
+
+}
+
+.product-image-list{
+    margin-top: 5px;
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+    padding: 8px;    
+}
+
+.image-image-list img{
+    width: 100px;
+    height: 100px;
+    border-radius: 10px;
+
+}
+
+.title-product-list h1{
+    margin-top: 12px;
+}
+
+.title-product-list h1{
+    font-size: 10px;
+    font-weight: 500;
+    text-decoration: none;
+    color: #1C1C1E;
+}
+
+.footer-product-list{
+    margin-top: 12px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.size h1{
+    font-family: Poppins;
+    font-size: 10px;
+    font-weight: 500;
+    color: #7E7E7E;
+    margin-top: 7px;
+}
+
+.btn-add-cart button{
+    border-style: none;
+    background-color: white;
+}
+
+.lokasi-merchant{
+    margin-top: 25px;
+}
+
+.lokasi-merchant h1{
+    font-size: 14px;
+    font-weight: 500;
+    color: #1C1C1E;
+}
+
+.map-merchant iframe{
+    margin-top:14px;
+    width: 100%;
+    height: 164px;
+    border-radius: 7px;
+}
+
+.image-product-detail {
+    height: 390;
+    width: 480px;
+    position: absolute;
+    max-width: 480px;
+    top: 0;
+    left: 50%; /* Memindahkan elemen ke tengah secara horizontal */
+    transform: translate(-50%); /* Mengatur elemen ke posisi tengah */
+    z-index: 1;
+    max-height: 390px;
+    width: 100%;
+}
+
+.image-product-detail img {
+    height: 390;
+    width: 480px;
+    max-height: 390px;
+    max-width: 480px;
+    display: block; /* Mencegah margin bawaan pada elemen inline seperti img */
+    margin: 0 auto; /* Menambahkan pengaturan posisi center pada gambar */
+}
+
+.title-product-detail h1{
+    font-family: Poppins;
+    font-size: 16px;
+    font-weight: 500;
+    color: #1C1C1E;
+}
+
+.category-product-detail h1{
+    font-size: 14px;
+    font-weight: 400;
+    color: #7E7E7E;
+}
+.category-product-detail h2{
+    font-size: 14px;
+    font-weight: 400;
+    color: #7E7E7E;
+}
+.category-product-detail h3{
+    font-size: 14px;
+    font-weight: 400;
+    color: #7E7E7E;
+}
+
+.alert-QA{
+    width: 100%;
+    background-color: #F2F9FF;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    padding-left: 12px;
+    gap: 10px;
+}
+
+.alert-QA h1{
+    font-size: 10px;
+    font-weight: 400;
+    color: #1780E2;
+    margin: 0;
+}
+
+.footer-container-checkout-payment{
+    margin-top:20px;
+    justify-content: space-between;
+}
+
+.txt-coin-info h1{
+    font-size: 12px;
+    font-weight: 500;
+    color: #1C1C1E;
+    margin: 0;
+}
+.description-detail-product h1{
+    font-size: 12px;
+    font-weight: 400;
+    color: #7E7E7E;
+    margin: 0;
+    text-align: justify;
+}
+.txt-coin-info h2{
+    font-size: 10px;
+    font-weight: 500;
+    color: #1C1C1E;
+    opacity: 50%;
+    margin: 0;
+}
+
+.btn-checkout{
+    width: 200px;
+    height: 43px;
+    border-radius: 7px;
+}
+.btn-checkout button{
+    width: 200px;
+    height: 43px;
+    border-radius: 7px;
+    background-color: #01ADB5;
+    border-style: none;
+    color: white;
 }

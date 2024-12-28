@@ -12,4 +12,8 @@ class productController extends Controller
     public function getDetailMerchant(){
         return view("merchant.detail");
     }
+
+    public function getDetailProduct(){
+        return view("product.detail");
+    }
 }

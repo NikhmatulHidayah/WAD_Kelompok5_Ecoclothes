@@ -25,3 +25,13 @@ Route::get('/merchant/uuid', [productController::class, 'getDetailMerchant']);
 Route::get('/merchant/uuid/product/id_product', [productController::class, 'getDetailProduct']);
 
 Route::get('/admin/merchant/order/all', [merchantController::class, 'getAllOrder']);
+Route::get('/admin/merchant/setting', [merchantController::class, 'getMerchantDashboard']);
+Route::post('admin/merchant/logout', [MerchantController::class, 'logout'])->name('logout');
+
+
+Route::get('/admin/merchant/add/branch', [merchantController::class, 'getAddMerchant']);
+Route::post('/admin/merchant/add/branch/post', [merchantController::class, 'postAddMerchant']);
+
+Route::get('/admin/merchant/login', [merchantController::class, 'getLogin']);
+Route::post('/admin/merchant/login/post', [authController::class, 'postLogin']);
+

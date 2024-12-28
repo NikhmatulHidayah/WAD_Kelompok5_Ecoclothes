@@ -16,3 +16,13 @@ body{
     box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.10);
     border-radius: 7px;
 }
+
+.btn-open-new-merchant button{
+    background-color: #01adb5;
+    width: 170px;
+    height: 40px;
+    border-radius: 4px;
+    border-style: none;
+    color: white;
+    font-size: 14px;
+}

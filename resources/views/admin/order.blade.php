@@ -23,19 +23,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link active" href="#">Order</a>
+            <a class="nav-link active" href="/admin/merchant/order/all">Order</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Merchant</a>
+            <a class="nav-link" href="/admin/merchant/setting">Merchant</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Coin</a>
+            <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Event</a>
+            <a class="nav-link" href="/admin/merchant/add/event">Event</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Article</a>
+            <a class="nav-link" href="/admin/merchant/add/article">Article</a>
           </li>
         </ul>
       </div>

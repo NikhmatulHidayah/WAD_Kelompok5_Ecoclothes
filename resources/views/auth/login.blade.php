@@ -38,11 +38,12 @@
         <p>Masukkan akun kamu dengan benar</p>
       </div>
       <div class="form-login-register" style="margin-top:32px">
-        <form action="" method="post">
+        <form action="/login/user/post" method="post">
+          @csrf
           <label>Email</label>
-          <input type="email" class="form-control" required>
+          <input name="email" type="email" class="form-control" required>
           <label class="mt-3">Password</label>
-          <input type="password" class="form-control" required>
+          <input name="password" type="password" class="form-control" required>
           <button type="submit" id="submit" style="display:none">submit</button>
         </form>
       </div>

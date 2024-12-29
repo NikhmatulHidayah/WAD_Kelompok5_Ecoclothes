@@ -51,7 +51,7 @@
                     </div>
                     <div class="text-coin">
                         <p style="font-size:12px; color:#1C1C1E; font-weight:450; ">Coin Tukar</p>
-                        <p style="font-size:10px; color:#1C1C1E; color:#1C1C1E;; opacity:50%; ">7 item</p>
+                        <p style="font-size:10px; color:#1C1C1E; color:#1C1C1E;; opacity:50%; ">{{$user->coin_eco}} item</p>
                     </div>
                 </div>
                 <div class="component-user d-flex gap-2">
@@ -59,7 +59,7 @@
                         <img src="https://cdn-icons-png.flaticon.com/512/15383/15383003.png" width="25" height="25" alt="">
                     </div>
                     <div class="text-coin">
-                        <p style="font-size:12px; color:#1C1C1E; font-weight:450; ">nikhmut</p>
+                        <p style="font-size:12px; color:#1C1C1E; font-weight:450; ">{{$user->eco_id}}</p>
                         <p style="font-size:10px; color:#1C1C1E; color:#1C1C1E;; opacity:50%; ">ID kamu untuk menukar baju</p>
                     </div>
                 </div>
@@ -203,25 +203,18 @@
                 </div>
                 <p class="sub-article-widget">Jelajahi info seputar fesyen di <span style="color:#FFB30D">Eco</span><span style="color:#01ADB5">Clothes</span></p>
 
+                @foreach ($articles as $article)
                 <div class="card-article">
                     <div class="photo-article-card">
-                        <img src="https://serayunews.pw/wp-content/uploads/2024/03/image-190-768x512-1.png" alt="">
+                        <img src="{{$article->picture}}" alt="">
                     </div>
 
                     <div class="title-article-card">
-                        <h1>Jangan Disepelekan! Ini Dampak Fast Fashion dan Perilaku Konsumtif Pada Ancaman Limbah Pakaian</h1>
+                        <h1>{{$article->title}}</h1>
                     </div>
                 </div>
+                @endforeach
 
-                <div class="card-article">
-                    <div class="photo-article-card">
-                        <img src="https://www.its.ac.id/news/wp-content/uploads/sites/2/2022/10/piles-of-used-clothes.jpg" alt="">
-                    </div>
-
-                    <div class="title-article-card">
-                        <h1>Perilaku Konsumtif Beli Pakaian Bisa Berdampak Buruk bagi Lingkungan</h1>
-                    </div>
-                </div>
             </div>
         </section>
         

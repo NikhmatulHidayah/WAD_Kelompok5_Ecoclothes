@@ -27,7 +27,6 @@ class authController extends Controller
     
         Auth::loginUsingId($user->id_user);
     
-        // Redirect berdasarkan is_merchant
         if ($user->is_merchant) {
             return redirect('/admin/merchant/order/all');
         } else {

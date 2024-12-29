@@ -15,6 +15,11 @@ return new class extends Migration
         Schema::create('merchants', function (Blueprint $table) {
             $table->uuid('id_merchant')->primary()->default(Str::uuid());
             $table->uuid('id_user');
+            $table->string('picture_1')->nullable();
+            $table->string('picture_2')->nullable();
+            $table->string('picture_3')->nullable();
+            $table->string('picture_4')->nullable();
+            $table->string('picture_5')->nullable();
             $table->string('name_merchant')->nullable();
             $table->text('address')->nullable();
             $table->string('work_hours')->nullable();

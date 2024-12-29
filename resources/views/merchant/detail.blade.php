@@ -67,10 +67,10 @@
         </div>
 
         <div class="information-detail-merchant">
-            <h1>Eco Clothes Bojongsoang</h1>
-            <h2>Jl. Raya Bojongsoang 14, Kab. Bandung </h2>
-            <h3>BUKA</h3>
-            <h4>10:00 - 17:00</h4>
+            <h1>{{$merchant->name_merchant}}</h1>
+            <h2>{{$merchant->address}} </h2>
+            <h3>{{$merchant->status}}</h3>
+            <h4>{{$merchant->work_hours}}</h4>
         </div>
 
         <div class="head-isi-lemari">
@@ -84,22 +84,23 @@
         
         <div class="swiper" style="margin-top: 5px;">
         <div class="swiper-wrapper" style="height: 200px;">
+            @foreach ($products as $product)
             <div class="swiper-slide">
                 <div class="product-top-list">
                     <div class="image-prodduct-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
+                        <img src="{{$product->picture_1}}" alt="">
                     </div>
                     <div class="title-product-list">
-                        <a style="text-decoration: none !important;" href="/merchant/uuid/product/id_product">
-                            <h1>Blus Wanita Ungu Kancing Lengan Rimple</h1>
+                        <a style="text-decoration: none !important;" href="/merchant/{{$id_merchant}}/product/{{$product->id_product}}">
+                            <h1>{{$product->name_product}}</h1>
                         </a>
                     </div>
                     <div class="footer-product-list">
                         <div class="size">
-                            <h1>Size: M</h1>
+                            <h1>Size: {{$product->size}}</h1>
                         </div>
                         <div class="btn-add-cart">
-                            <form action="/cart/add/id_product" method="post">
+                            <form action="/cart/add/{{$product->id_product}}" method="post">
                                 <button type="submit">
                                     <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFB30D" viewBox="0 0 24 24">
                                         <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z" clip-rule="evenodd"/>
@@ -110,117 +111,14 @@
                     </div>
                 </div>
             </div>
-            <div class="swiper-slide">
-                <div class="product-top-list">
-                    <div class="image-prodduct-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                    <div class="title-product-list">
-                        <a style="text-decoration: none !important;" href="/merchant/uuid/product/id_product">
-                            <h1>Blus Wanita Ungu Kancing Lengan Rimple</h1>
-                        </a>
-                    </div>
-                    <div class="footer-product-list">
-                        <div class="size">
-                            <h1>Size: M</h1>
-                        </div>
-                        <div class="btn-add-cart">
-                            <form action="/cart/add/id_product" method="post">
-                                <button type="submit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFB30D" viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z" clip-rule="evenodd"/>
-                                    </svg>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="product-top-list">
-                    <div class="image-prodduct-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                    <div class="title-product-list">
-                        <a style="text-decoration: none !important;" href="/merchant/uuid/product/id_product">
-                            <h1>Blus Wanita Ungu Kancing Lengan Rimple</h1>
-                        </a>
-                    </div>
-                    <div class="footer-product-list">
-                        <div class="size">
-                            <h1>Size: M</h1>
-                        </div>
-                        <div class="btn-add-cart">
-                            <form action="/cart/add/id_product" method="post">
-                                <button type="submit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFB30D" viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z" clip-rule="evenodd"/>
-                                    </svg>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="product-top-list">
-                    <div class="image-prodduct-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                    <div class="title-product-list">
-                        <a style="text-decoration: none !important;" href="/merchant/uuid/product/id_product">
-                            <h1>Blus Wanita Ungu Kancing Lengan Rimple</h1>
-                        </a>
-                    </div>
-                    <div class="footer-product-list">
-                        <div class="size">
-                            <h1>Size: M</h1>
-                        </div>
-                        <div class="btn-add-cart">
-                            <form action="/cart/add/id_product" method="post">
-                                <button type="submit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFB30D" viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z" clip-rule="evenodd"/>
-                                    </svg>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="product-top-list">
-                    <div class="image-prodduct-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                    <div class="title-product-list">
-                        <a style="text-decoration: none !important;" href="/merchant/uuid/product/id_product">
-                            <h1>Blus Wanita Ungu Kancing Lengan Rimple</h1>
-                        </a>
-                    </div>
-                    <div class="footer-product-list">
-                        <div class="size">
-                            <h1>Size: M</h1>
-                        </div>
-                        <div class="btn-add-cart">
-                            <form action="/cart/add/id_product" method="post">
-                                <button type="submit">
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="#FFB30D" viewBox="0 0 24 24">
-                                        <path fill-rule="evenodd" d="M2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10S2 17.523 2 12Zm11-4.243a1 1 0 1 0-2 0V11H7.757a1 1 0 1 0 0 2H11v3.243a1 1 0 1 0 2 0V13h3.243a1 1 0 1 0 0-2H13V7.757Z" clip-rule="evenodd"/>
-                                    </svg>
-                                </button>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 
     <div class="lokasi-merchant">
         <h1>Lokasi Merchant</h1>
         <div class="map-merchant">
-            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3960.3202709231005!2d107.6284827757483!3d-6.971490768264586!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e68e9adaf2f99a3%3A0xaefd20f00bdb096d!2sTelkom%20University%20Convention%20Hall!5e0!3m2!1sen!2sid!4v1735274365279!5m2!1sen!2sid" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            {!! $merchant->maps_location !!}
         </div>
     </div>
     </header>

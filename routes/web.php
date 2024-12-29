@@ -37,6 +37,9 @@ Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
 
     Route::get('/admin/merchant/add/branch', [merchantController::class, 'getAddMerchant']);
     Route::post('/admin/merchant/add/branch/post', [merchantController::class, 'postAddMerchant']);
+    Route::get('/admin/merchant/edit/{id_merchant}', [merchantController::class, 'getEditMerchant']);
+    Route::post('/admin/merchant/edit/{id_merchant}/post', [merchantController::class, 'postEditMerchant']);
+
 
     Route::get('/admin/merchant/product/all/{id_merchant}', [merchantController::class, 'getProductList']);
     Route::get('/admin/merchant/product/add/{id_merchant}', [merchantController::class, 'getAddProduct']);
@@ -66,4 +69,7 @@ Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
 
     Route::get('/payment/{id_user}', [paymentController::class, 'showSnap']);
     Route::post('/update-transaction', [paymentController::class, 'updateTransaction']);
+
+    Route::get('/verifikasi/pembayaran/{id_transaction}', [paymentController::class, 'paymentVerif']);
+    Route::post('/verifikasi/pembayaran/{id_transaction}/post', [paymentController::class, 'postPaymentVerif']);
 });

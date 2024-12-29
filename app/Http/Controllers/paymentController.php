@@ -128,6 +128,26 @@ class paymentController extends Controller
         return response()->json(['message' => 'Transaction updated successfully']);
     }
 
+    public function paymentVerif($id_transaction){
+        return view('transaction.verification', [
+            'id_transaction' => $id_transaction,
+        ]);
+
+    }
+    public function postPaymentVerif($id_transaction){
+        DB::table('transactions')
+        ->where('id_transaction', $id_transaction)
+        ->update([
+            'is_payment' => 1,
+            'status' => 'menunggu konfirmasi',
+            'updated_at' => now(),
+        ]);
+
+        return redirect('/transaction/inprogres');
+
+
+    }
+
 
 }
 

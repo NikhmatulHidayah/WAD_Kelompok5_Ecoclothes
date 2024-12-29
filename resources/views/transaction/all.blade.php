@@ -24,16 +24,25 @@
     </div>
     <div class="frame-home">
         <header class="hero" style="margin-top:15%;">
-            <div class="card-widget-transaction d-flex gap-3">
-                <div class="icon-widget-trx">
-                    <img src="https://cdn-icons-png.flaticon.com/512/10693/10693001.png" alt="">
-                </div>
-                <div class="content-widget-trx">
-                    <h4>Nikhmatul Hidayah</h4>
-                    <h5><span style="color:#28CD41">Mengisi</span> 1 coin tukar</h5>
-                    <h6>13 Juni 2024</h6>
-                </div>
-            </div>
+        @foreach ($groupedTransactions as $transactionGroup)
+    <div class="card-widget-transaction d-flex gap-3">
+        <div class="content-widget-trx">
+            <!-- Ambil nama produk dari setiap transaksi dalam grup -->
+            <h4>
+                @foreach ($transactionGroup as $transaction)
+                    {{ $transaction->name_product }}@if (!$loop->last), @endif
+                @endforeach
+            </h4>
+
+            <!-- Resi ditampilkan dari transaksi pertama di grup -->
+            <h5><span style="color:#28CD41">Resi:</span> {{ $transactionGroup->first()->resi_number ?? 'Belum tersedia' }}</h5>
+
+            <!-- Tanggal transaksi ditampilkan dari transaksi pertama di grup -->
+            <h6>{{ \Carbon\Carbon::parse($transactionGroup->first()->transaction_date)->format('d M Y') }}</h6>
+        </div>
+    </div>
+@endforeach
+
         </header>
 
         <div class="container-menus">

@@ -51,3 +51,11 @@ Route::post('/admin/merchant/product/add/{id_merchant}/post', [merchantControlle
 Route::get('/admin/merchant/add/coin', [paymentController::class, 'getTopUpCoin']);
 Route::post('/admin/merchant/add/coin/post', [paymentController::class, 'postTopUpCoin']);
 
+
+
+Route::get('/admin/merchant/event', [merchantController::class, 'getListEvent']);
+Route::get('/admin/merchant/event/add', [merchantController::class, 'getAddEvent']);
+Route::get('/admin/merchant/event/edit/{id_event}', [merchantController::class, 'getEditEvent']);
+Route::post('/admin/merchant/event/edit/{id_event}/post', [merchantController::class, 'postEditEvent']);
+Route::post('/admin/merchant/event/delete/{id_event}', [merchantController::class, 'deleteEvent']);
+Route::post('/admin/merchant/event/add/post', [merchantController::class, 'postAddEvent']);

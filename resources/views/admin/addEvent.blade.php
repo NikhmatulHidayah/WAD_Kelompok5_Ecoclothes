@@ -32,10 +32,10 @@
             <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/event">Event</a>
+            <a class="nav-link active" href="/admin/merchant/event">Event</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/admin/merchant/article">Article</a>
+            <a class="nav-link" href="/admin/merchant/article">Article</a>
           </li>
           <li class="nav-item">
             <form action="/admin/merchant/logout" method="post">
@@ -51,29 +51,51 @@
   <div class="container mt-4">
     <div class="header-order d-flex gap-4 mb-4">
       <div class="title">
-        <h1>Semua Article</h1>
+        <h1>Buat Event Baru</h1>
       </div>
-    </div>
-    <div class="btn-open-new-merchant mt-3 mb-4">
-        <a href="/admin/merchant/article/add">
-            <button type="button">Tambah Article</button>
-        </a>
     </div>
 
-    @foreach ($articles as $article)
-      <div class="article-top-list">
-        <div class="title-product-list">
-            <a style="text-decoration: none !important;" href="/admin/merchant/article/{{$article->id_article}}">
-                <h1 style="font-size: 16px">{{$article->title}}</h1>
-            </a>
+    <form action="/admin/merchant/event/add/post" method="post">
+      @csrf
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nama Event</label>
+          <input type="text" required name="name_event" class="form-control">
         </div>
-        <div class="footer-product-list">
-            <div class="size">
-                <h1>author: {{$article->author}}</h1>
-            </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Kuota Pendaftaran</label>
+            <input type="number" required name="quota" class="form-control">
         </div>
-      </div>
-    @endforeach
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Event</label>
+            <input type="text" required name="picture" class="form-control">
+            <div id="emailHelp" class="form-text">masukkan foto dengan bentuk url</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tipe Event</label>
+            <input type="text" required name="type" class="form-control">
+            <div id="emailHelp" class="form-text">online atau offline</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
+            <input type="text" required name="description" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tanggal</label>
+            <input type="text" required name="date" class="form-control">
+            <div id="emailHelp" class="form-text">contoh: Sabtu, 9 Juli 2022</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Waktu</label>
+            <input type="text" required name="clock" class="form-control">
+            <div id="emailHelp" class="form-text">gunakan format waktu 24 jam</div>
+
+        </div>
+    
+        <div class="btn-open-new-merchant mt-4 mb-4">
+            <button type="submit">Tambahkan Event</button>
+        </div>
+    </form>
+
   </div>
 </body>
 </html>

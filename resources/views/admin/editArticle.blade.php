@@ -51,29 +51,53 @@
   <div class="container mt-4">
     <div class="header-order d-flex gap-4 mb-4">
       <div class="title">
-        <h1>Semua Article</h1>
+        <h1>Edit Artikel</h1>
       </div>
-    </div>
-    <div class="btn-open-new-merchant mt-3 mb-4">
-        <a href="/admin/merchant/article/add">
-            <button type="button">Tambah Article</button>
-        </a>
     </div>
 
-    @foreach ($articles as $article)
-      <div class="article-top-list">
-        <div class="title-product-list">
-            <a style="text-decoration: none !important;" href="/admin/merchant/article/{{$article->id_article}}">
-                <h1 style="font-size: 16px">{{$article->title}}</h1>
-            </a>
+    <form action="/admin/merchant/article/edit/{{$id_article}}/post" method="post">
+      @csrf
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Judul</label>
+          <input type="text" required name="title" value="{{$articles->title}}" class="form-control">
         </div>
-        <div class="footer-product-list">
-            <div class="size">
-                <h1>author: {{$article->author}}</h1>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Penulis</label>
+            <input type="text" required name="author" value="{{$articles->author}}"  class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Artikel</label>
+            <input type="text" required name="picture" value="{{$articles->picture}}" class="form-control">
+            <div id="emailHelp" class="form-text">Masukkan foto dengan bentuk url</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Isi Konten</label>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="5">{{$articles->content}}</textarea>
+        </div>
+    
+        <div class="container-button-event gap-3 d-flex mt-4 mb-4">
+            <div class="btn-open-new-merchant">
+                <button type="submit">Edit Article</button>
+            </div>
+            <div class="delete-event">
+                <button type="button" id="dummy">Delete Article</button>
             </div>
         </div>
-      </div>
-    @endforeach
+    </form>
+
   </div>
+
+  <form action="/admin/merchant/article/delete/{{$id_article}}" method="post">
+        @csrf
+        <input type="id_event" value="{{$id_article}}" hidden name="id_event">
+        <button id="real-button" style="display: none;" type="submit"></button>
+  </form>
 </body>
+
+<script>
+    document.getElementById('dummy').addEventListener('click', function () {
+        const realButton = document.getElementById('real-button');
+        realButton.click();
+    });
+</script>
 </html>

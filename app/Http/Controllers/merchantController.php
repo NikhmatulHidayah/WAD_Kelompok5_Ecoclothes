@@ -124,7 +124,9 @@ class merchantController extends Controller
     }
 
     public function getListarticle(){
-        $articles = DB::table(table: 'articles')->get();
+        $articles = DB::table(table: 'articles')
+        ->where('is_delete', 0)
+        ->get();
 
         return view('admin.article', [
             'articles' => $articles,
@@ -149,5 +151,143 @@ class merchantController extends Controller
         return redirect("/admin/merchant/article");
 
     }
+    public function getListEvent(){
+        $events = DB::table(table: 'events')
+        ->where('is_delete', 0)
+        ->get();
+
+        return view('admin.event', [
+            'events' => $events,
+        ]);
+    }
+
+    public function getAddEvent(){
+        return view("admin.AddEvent");
+    }
+    public function postAddEvent(Request $request)
+    {
+        $name_event = $request->input('name_event');
+        $quota = $request->input('quota');
+        $picture = $request->input('picture');
+        $description = $request->input('description');
+        $type = $request->input('type');
+        $date = $request->input('date');
+        $clock = $request->input('clock');
+    
+        DB::table('events')->insert([
+            'name_event' => $name_event,
+            'quota' => $quota,
+            'picture' => $picture,
+            'description' => $description,
+            'date' => $date,
+            'clock' => $clock,
+            'is_delete' => 0,
+            'type' => $type,
+            'created_at' => now(),
+            'updated_at' => now(),
+        ]);
+    
+        return redirect("/admin/merchant/event");
+    }
+
+    public function getEditEvent($id_event){
+        $events = DB::table('events')
+        ->where('id_event', $id_event)
+        ->first();
+
+        $participants = DB::table('participant_events')
+        ->join('users', 'participant_events.id_user', '=', 'users.id_user')
+        ->where('participant_events.id_event', $id_event)
+        ->select('users.name', 'users.phone_number', 'users.eco_id')
+        ->get();
+
+        //dd($participants);
+
+        //dd($events);
+        return view('admin.editEvent', [
+            'id_event' => $id_event,
+            'events' => $events,
+            'participants' => $participants
+        ]);
+    }
+
+    public function postEditEvent(Request $request, $id_event){
+        $name_event = $request->input('name_event');
+        $quota = $request->input('quota');
+        $picture = $request->input('picture');
+        $description = $request->input('description');
+        $type = $request->input('type');
+
+        DB::table('events')
+        ->where('id_event', $id_event)
+        ->update([
+            'name_event' => $name_event,
+            'quota' => $quota,
+            'picture' => $picture,
+            'description' => $description,
+            'type' => $type,
+            'updated_at' => now(),
+        ]);
+
+        return redirect("/admin/merchant/event");
+    }
+
+    public function deleteEvent($id_event)
+    {
+        $updated = DB::table('events')
+            ->where('id_event', $id_event)
+            ->update(['is_delete' => 1]);
+    
+        if ($updated) {
+            return redirect("/admin/merchant/event");
+        } else {
+            return redirect("/admin/merchant/event");
+        }
+    }
+
+    public function getEditArticle($id_article){
+        $articles = DB::table('articles')
+        ->where('id_article', $id_article)
+        ->first();
+
+        //dd($articles);
+        return view('admin.editArticle', [
+            'articles' => $articles,
+            'id_article' => $id_article
+        ]);
+    }
+
+    public function postEditArticle(Request $request, $id_article){
+        $title = $request->input('title');
+        $author = $request->input('author');
+        $picture = $request->input('picture');
+        $content = $request->input('content');
+
+        DB::table('articles')
+        ->where('id_article', $id_article)
+        ->update([
+            'title' => $title,
+            'author' => $author,
+            'picture' => $picture,
+            'content' => $content,
+        ]);
+
+        return redirect("/admin/merchant/article");
+
+    }
+
+    public function deleteArticle($id_article){
+        $updated = DB::table('events')
+        ->where('id_article', $id_article)
+        ->update(['is_delete' => 1]);
+
+        if ($updated) {
+            return redirect("/admin/merchant/article");
+        } else {
+            return redirect("/admin/merchant/article");
+        }
+    }
+
+    
 
 }

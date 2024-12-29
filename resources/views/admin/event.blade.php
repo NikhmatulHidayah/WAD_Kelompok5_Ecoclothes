@@ -32,10 +32,10 @@
             <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/event">Event</a>
+            <a class="nav-link active" href="/admin/merchant/event">Event</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/admin/merchant/article">Article</a>
+            <a class="nav-link" href="/admin/merchant/article">Article</a>
           </li>
           <li class="nav-item">
             <form action="/admin/merchant/logout" method="post">
@@ -51,25 +51,25 @@
   <div class="container mt-4">
     <div class="header-order d-flex gap-4 mb-4">
       <div class="title">
-        <h1>Semua Article</h1>
+        <h1>Semua Event</h1>
       </div>
     </div>
     <div class="btn-open-new-merchant mt-3 mb-4">
-        <a href="/admin/merchant/article/add">
-            <button type="button">Tambah Article</button>
+        <a href="/admin/merchant/event/add">
+            <button type="button">Tambah Event</button>
         </a>
     </div>
 
-    @foreach ($articles as $article)
+    @foreach ($events as $event)
       <div class="article-top-list">
         <div class="title-product-list">
-            <a style="text-decoration: none !important;" href="/admin/merchant/article/{{$article->id_article}}">
-                <h1 style="font-size: 16px">{{$article->title}}</h1>
+            <a style="text-decoration: none !important;" href="/admin/merchant/event/edit/{{$event->id_event}}">
+                <h1 style="font-size: 16px">{{$event->name_event}}</h1>
             </a>
         </div>
         <div class="footer-product-list">
             <div class="size">
-                <h1>author: {{$article->author}}</h1>
+                <h1>Quota: {{$event->quota}}</h1>
             </div>
         </div>
       </div>

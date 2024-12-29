@@ -17,6 +17,8 @@ return new class extends Migration
             $table->integer('quota')->nullable();
             $table->string('picture')->nullable();
             $table->string('description')->nullable();
+            $table->string('date')->nullable();
+            $table->string('clock')->nullable();
             $table->boolean('is_delete')->default(false);
             $table->string('type')->nullable();
             $table->timestamps();

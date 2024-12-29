@@ -3,6 +3,7 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
+use Illuminate\Support\Str;
 
 return new class extends Migration
 {
@@ -18,6 +19,7 @@ return new class extends Migration
             $table->string('size')->nullable();
             $table->string('weight')->nullable();
             $table->string('category')->nullable();
+            $table->string('description')->nullable();
             $table->string('picture_1')->nullable();
             $table->string('picture_2')->nullable();
             $table->string('picture_3')->nullable();

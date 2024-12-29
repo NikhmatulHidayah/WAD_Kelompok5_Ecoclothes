@@ -1201,3 +1201,17 @@ body {
     border-style: none;
     color: white;
 }
+
+.address-fill label{
+    font-size: 14px;
+    color: #4D4D4D;
+    font-weight: 400;
+}
+
+.address-fill textarea{
+    background-color: #F5F7F7;
+    width: 100%;
+    border-style: none;
+    height: 67px;
+    font-size: 12px;
+}

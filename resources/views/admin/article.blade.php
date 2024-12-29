@@ -26,7 +26,7 @@
             <a class="nav-link" href="/admin/merchant/order/all">Order</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/admin/merchant/setting">Merchant</a>
+            <a class="nav-link" href="/admin/merchant/setting">Merchant</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
@@ -35,7 +35,7 @@
             <a class="nav-link" href="/admin/merchant/add/event">Event</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/article">Article</a>
+            <a class="nav-link active" href="/admin/merchant/article">Article</a>
           </li>
           <li class="nav-item">
             <form action="/admin/merchant/logout" method="post">
@@ -51,42 +51,29 @@
   <div class="container mt-4">
     <div class="header-order d-flex gap-4 mb-4">
       <div class="title">
-        <h1>Buka Cabang Baru</h1>
+        <h1>Semua Article</h1>
       </div>
     </div>
+    <div class="btn-open-new-merchant mt-3 mb-4">
+        <a href="/admin/merchant/article/add">
+            <button type="button">Tambah Article</button>
+        </a>
+    </div>
 
-    <form action="/admin/merchant/add/branch/post" method="post">
-        @csrf
-        <input type="hidden" name="id_user" value="{{$id_user}}">
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">Nama Cabang</label>
-          <input type="text" name="name_merchant" class="form-control">
-        <div id="emailHelp" class="form-text">Pastikan penulisan nama cabang sudah benar.</div>
+    @foreach ($articles as $article)
+      <div class="article-top-list">
+        <div class="title-product-list">
+            <a style="text-decoration: none !important;" href="">
+                <h1 style="font-size: 16px">{{$article->title}}</h1>
+            </a>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Alamat</label>
-            <input type="text" name="address" class="form-control">
+        <div class="footer-product-list">
+            <div class="size">
+                <h1>author: {{$article->author}}</h1>
+            </div>
         </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Jam Buka</label>
-            <input type="text" name="work_hours" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Status</label>
-            <input type="text" name="status" class="form-control">
-            <div id="emailHelp" class="form-text">Buka atau Tutup.</div>
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Lokasi Google Maps</label>
-            <input type="text" name="maps_location" class="form-control">
-            <div id="emailHelp" class="form-text">Gunakan tag iframe pada google maps.</div>
-        </div>
-
-        <div class="btn-open-new-merchant mt-4">
-            <button type="submit">Buka Cabang</button>
-        </div>
-    </form>
-
+      </div>
+    @endforeach
   </div>
 </body>
 </html>

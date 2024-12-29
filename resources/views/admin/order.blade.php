@@ -15,7 +15,7 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/tzm9JFR/image.png">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -35,7 +35,13 @@
             <a class="nav-link" href="/admin/merchant/add/event">Event</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/add/article">Article</a>
+            <a class="nav-link" href="/admin/merchant/article">Article</a>
+          </li>
+          <li class="nav-item">
+            <form action="/admin/merchant/logout" method="post">
+                @csrf
+                <button type="submit" class="btn btn-warning">Logout</button>
+            </form>
           </li>
         </ul>
       </div>

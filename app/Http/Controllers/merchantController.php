@@ -277,7 +277,7 @@ class merchantController extends Controller
     }
 
     public function deleteArticle($id_article){
-        $updated = DB::table('events')
+        $updated = DB::table('articles')
         ->where('id_article', $id_article)
         ->update(['is_delete' => 1]);
 

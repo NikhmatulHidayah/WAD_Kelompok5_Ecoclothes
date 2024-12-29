@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Str;
 
 class authController extends Controller
 {
@@ -37,6 +38,29 @@ class authController extends Controller
 
     public function getRegister(){
         return view("auth.register");
+    }
+    public function postRegister(Request $request)
+    {
+    $name = $request->input('name');
+    $eco_id = $request->input('eco_id');
+    $phone_number = $request->input('phone_number');
+    $email = $request->input('email');
+    $password = $request->input('password');
+
+    DB::table('users')->insert([
+        'id_user' => Str::uuid(),
+        'name' => $name,
+        'eco_id' => $eco_id,
+        'phone_number' => $phone_number,
+        'email' => $email,
+        'is_merchant' => 0,
+        'coin_eco' => 0,
+        'password' => bcrypt($password), 
+        'created_at' => now(),
+        'updated_at' => now(),
+    ]);
+
+    return redirect('/login')->with('success', 'Registrasi berhasil! Silakan login.');
     }
 
 }

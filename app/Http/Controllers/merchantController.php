@@ -19,11 +19,40 @@ class merchantController extends Controller
 
         return redirect('/admin/merchant/login');
     }
-    public function getAllOrder(){
-        //$id_user = Auth::user()->id_user;
-        //dd($id_user);
-        return view("admin.order");
+    
+    public function getAllOrder()
+    {
+        // Ambil data dari tabel transactions, users, carts, dan products
+        $transactions = DB::table('transactions')
+            ->join('users', 'transactions.id_user', '=', 'users.id_user') // Join dengan tabel users
+            ->join('carts', 'transactions.id_user', '=', 'carts.id_user') // Join dengan tabel carts
+            ->join('products', 'carts.id_product', '=', 'products.id_product') // Join dengan tabel products
+            ->where('transactions.is_payment', true)
+            ->where('carts.is_delete', 1)
+            ->select(
+                'transactions.id_transaction',
+                'transactions.total',
+                'transactions.address',
+                'transactions.status',
+                'transactions.send_type', 
+                'transactions.resi_number',
+                'transactions.created_at',
+                'users.name as user_name', 
+                'products.name_product as product_name', 
+                'transactions.id_user' 
+            )
+            ->orderBy('transactions.created_at', 'desc')
+            ->get();
+    
+        $groupedTransactions = $transactions->groupBy('id_user');
+    
+        return view("admin.order", [
+            'groupedTransactions' => $groupedTransactions
+        ]);
     }
+    
+
+    
     public function getLogin(){
         return view("admin.login");
     }
@@ -286,6 +315,40 @@ class merchantController extends Controller
         } else {
             return redirect("/admin/merchant/article");
         }
+    }
+
+    public function getEditMerchant(Request $request, $id_merchant){
+        $merchants = DB::table('merchants')
+        ->where('id_merchant', $id_merchant)
+        ->first();
+
+        //dd($merchants);
+        return view('admin.editMerchant', [
+            'merchants' => $merchants
+        ]);
+    }
+
+    public function postEditMerchant(Request $request, $id_merchant)
+    {
+    $data = [
+        'name_merchant' => $request->input('name_merchant'),
+        'address' => $request->input('address'),
+        'work_hours' => $request->input('work_hours'),
+        'status' => $request->input('status'),
+        'picture_1' => $request->input('picture_1'),
+        'picture_2' => $request->input('picture_2'),
+        'picture_3' => $request->input('picture_3'),
+        'picture_4' => $request->input('picture_4'),
+        'picture_5' => $request->input('picture_5'),
+        'maps_location' => $request->input('maps_location'),
+        'updated_at' => now(),
+    ];
+
+    DB::table('merchants')
+        ->where('id_merchant', $id_merchant)
+        ->update($data);
+
+    return redirect('/admin/merchant/setting')->with('success', 'Data merchant berhasil diperbarui.');
     }
 
     

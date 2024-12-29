@@ -1215,3 +1215,16 @@ body {
     height: 67px;
     font-size: 12px;
 }
+
+.address-fill select{
+    font-size: 12px;
+}
+
+.wrap-total{
+    justify-content: space-between;
+}
+
+.wrap-total input{
+    border-style: none;
+    background-color: white;
+}

@@ -15,7 +15,7 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/tzm9JFR/image.png">
 </head>
 <body>
-<nav class="navbar navbar-expand-lg bg-body-tertiary">
+  <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -49,38 +49,61 @@
   </nav>
 
   <div class="container mt-4">
-    <div class="header-order d-flex gap-4">
+    <div class="header-order d-flex gap-4 mb-4">
       <div class="title">
-        <h1>Pengaturan Merchant</h1>
+        <h1>Edit Cabang</h1>
       </div>
     </div>
 
-    <div class="btn-open-new-merchant mt-3">
-        <a href="/admin/merchant/add/branch">
-            <button type="button">Buka Merchant Baru</button>
-        </a>
-    </div>
-
-    <div class="card-all-merchant">
-      @foreach ($merchants as $merchant)
-        <div class="card-merchant">
-            <h2 class="merchant-name">{{ $merchant->name_merchant }}</h2>
-            <p class="merchant-address">{{ $merchant->address }}</p>
-            <p class="merchant-work-hours">Work Hours: {{ $merchant->work_hours }}</p>
-            <p class="merchant-status">Status: {{ $merchant->status }}</p>
-            <a href="/admin/merchant/edit/{{ $merchant->id_merchant }}">
-              <button class="btn btn-warning">
-                  Edit
-              </button>
-            </a>
-            <a href="/admin/merchant/product/all/{{ $merchant->id_merchant }}">
-              <button class="btn btn-warning">
-                  Atur Produk
-              </button>
-            </a>
+    <form action="/admin/merchant/edit/{{$merchants->id_merchant}}/post" method="post">
+        @csrf
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Nama Cabang</label>
+          <input type="text" name="name_merchant" value="{{$merchants->name_merchant}}" class="form-control">
+        <div id="emailHelp" class="form-text">Pastikan penulisan nama cabang sudah benar.</div>
         </div>
-      @endforeach
-    </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Alamat</label>
+            <input type="text" name="address" value="{{$merchants->address}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Jam Buka</label>
+            <input type="text" name="work_hours" value="{{$merchants->work_hours}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Status</label>
+            <input type="text" name="status" value="{{$merchants->status}}" class="form-control">
+            <div id="emailHelp" class="form-text">Buka atau Tutup.</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Merchant 1</label>
+            <input type="text" name="picture_1" value="{{$merchants->picture_1}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Merchant 2</label>
+            <input type="text" name="picture_2" value="{{$merchants->picture_2}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Merchant 3</label>
+            <input type="text" name="picture_3" value="{{$merchants->picture_3}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Merchant 4</label>
+            <input type="text" name="picture_4" value="{{$merchants->picture_4}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Merchant 5</label>
+            <input type="text" name="picture_5" value="{{$merchants->picture_5}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Lokasi Google Maps</label>
+            <input type="text" name="maps_location" value="{{$merchants->maps_location}}" class="form-control">
+        </div>
+
+        <div class="btn-open-new-merchant mt-4">
+            <button type="submit">Edit Cabang</button>
+        </div>
+    </form>
 
   </div>
 </body>

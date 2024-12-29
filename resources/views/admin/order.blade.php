@@ -54,8 +54,8 @@
         <h1>Semua Pesanan</h1>
       </div>
       <div class="form-floating">
-        <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
-          <option selected>Pilih Cabang</option>
+        <select disabled class="form-select" id="floatingSelect" aria-label="Floating label select example">
+          <option selected>Fitur ini Belum Tersedia</option>
           <option value="1">One</option>
           <option value="2">Two</option>
           <option value="3">Three</option>
@@ -64,9 +64,45 @@
       </div>
     </div>
 
-    <div class="card-order mt-4">
-      
-    </div>
+    <table class="table table-bordered mt-4">
+    <thead>
+        <tr>
+            <th>Nama</th>
+            <th>Alamat</th>
+            <th>Produk yang Dipesan</th>
+            <th>Ekspedisi</th>
+            <th>Aksi</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach ($groupedTransactions as $id_user => $transactions)
+            <tr>
+                <td>{{ $transactions->first()->user_name }}</td>
+
+                <td>{{ $transactions->first()->address }}</td>
+
+                <td>
+                    <ul>
+                        @foreach ($transactions as $trx)
+                            <li>{{ $trx->product_name }}</li>
+                        @endforeach
+                    </ul>
+                </td>
+
+                <td>{{ $transactions->first()->send_type }}</td>
+
+                <td>
+                    <form action="/admin/transaction/add-resi/{{ $transactions->first()->id_transaction }}" method="POST" style="display:inline;">
+                        @csrf
+                        <button type="submit" class="btn btn-primary">Tambah Resi</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+    </tbody>
+</table>
+
+
 
   </div>
 </body>

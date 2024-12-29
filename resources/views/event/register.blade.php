@@ -32,28 +32,24 @@
     <div class="frame-home">
         <header class="hero" style="margin-top:15%;">
             <div class="photo-detail-event  mt-3">
-                <img src="https://assets-a1.kompasiana.com/items/album/2021/12/28/kreasi-tas-olahan-kain-perca-dengan-aksen-bordir-karya-ibu-rumah-tangga-asal-malang-eva-sophia-hidayatip6gl-61ca093f06310e5f8818a302.jpg" alt="">
+                <img src="{{$events->picture}}" alt="">
             </div>
             <div class="information-event">
-                <h1>Membuat Karya Kolase Fesyen Sebagai upaya Pemanfaatan Limbah Kain dan Pakaian</h1>
+                <h1>{{$events->name_event}}</h1>
 
-                <p class="text-justify">Ambitioni dedisse scripsisse iudicaretur. At nos hinc posthac, sitientis piros Afros. Petierunt uti sibi.</p>
+                <p class="text-justify">{{$events->description}}</p>
                 
                 <div class="sub-event">
-                    <h3>Sabtu, 9 Juli 2022 | 16.00 WIB</h3>
-                    <h4>Event Daring</h4>
+                    <h3>{{$events->date}} | {{$events->clock}} WIB</h3>
+                    <h4>Event {{$events->type}}</h4>
                 </div>
             </div>
             <div class="form-regist-event">
-                <form action="/event/registration/uuid" method="post">
+                <form action="/event/{{$events->id_event}}/register/post" method="post">
                     @csrf
-                    <div class="mb-1">
-                      <label for="exampleInputEmail1" class="form-label">Nama Lengkap</label>
-                      <input type="text" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
-                    </div>
                     <div class="mb-2">
                       <label for="exampleInputPassword1" class="form-label">EcoClothes ID</label>
-                      <input disabled type="text" class="form-control" value="nikhmut">
+                      <input disabled type="text" class="form-control" value="{{$users->eco_id}}">
                     </div>
 
                     <div class="btn-daftar-event">
@@ -64,5 +60,11 @@
         </header>
     </div>
 </body>
+
+@if (session('alert'))
+    <script>
+        alert("{{ session('alert') }}");
+    </script>
+@endif
 
 </html>

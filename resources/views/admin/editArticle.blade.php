@@ -23,19 +23,19 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link " href="/admin/merchant/order/all">Order</a>
+            <a class="nav-link" href="/admin/merchant/order/all">Order</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link " href="/admin/merchant/setting">Merchant</a>
+            <a class="nav-link" href="/admin/merchant/setting">Merchant</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/admin/merchant/add/coin">Coin</a>
+            <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admin/merchant/event">Event</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/article">Article</a>
+            <a class="nav-link active" href="/admin/merchant/article">Article</a>
           </li>
           <li class="nav-item">
             <form action="/admin/merchant/logout" method="post">
@@ -49,26 +49,55 @@
   </nav>
 
   <div class="container mt-4">
-    <div class="header-order d-flex gap-4">
+    <div class="header-order d-flex gap-4 mb-4">
       <div class="title">
-        <h1>Top Up Coin Pengguna</h1>
+        <h1>Edit Artikel</h1>
       </div>
     </div>
-    <form action="/admin/merchant/add/coin/post" method="post">
-        @csrf
-        <div class="mb-3">
-          <label for="exampleInputEmail1" class="form-label">ID Eco Clothes</label>
-          <input type="text" required name="eco_id" class="form-control">
-        </div>
-        <div class="mb-3">
-            <label for="exampleInputPassword1" class="form-label">Jumlah Coin</label>
-            <input type="number" required name="coin_eco" class="form-control">
-        </div>
 
-        <div class="btn-open-new-merchant mt-4 mb-4">
-            <button type="submit">Top Up Coin</button>
+    <form action="/admin/merchant/article/edit/{{$id_article}}/post" method="post">
+      @csrf
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Judul</label>
+          <input type="text" required name="title" value="{{$articles->title}}" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Penulis</label>
+            <input type="text" required name="author" value="{{$articles->author}}"  class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Foto Artikel</label>
+            <input type="text" required name="picture" value="{{$articles->picture}}" class="form-control">
+            <div id="emailHelp" class="form-text">Masukkan foto dengan bentuk url</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Isi Konten</label>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="5">{{$articles->content}}</textarea>
+        </div>
+    
+        <div class="container-button-event gap-3 d-flex mt-4 mb-4">
+            <div class="btn-open-new-merchant">
+                <button type="submit">Edit Article</button>
+            </div>
+            <div class="delete-event">
+                <button type="button" id="dummy">Delete Article</button>
+            </div>
         </div>
     </form>
+
   </div>
+
+  <form action="/admin/merchant/article/delete/{{$id_article}}" method="post">
+        @csrf
+        <input type="id_event" value="{{$id_article}}" hidden name="id_event">
+        <button id="real-button" style="display: none;" type="submit"></button>
+  </form>
 </body>
+
+<script>
+    document.getElementById('dummy').addEventListener('click', function () {
+        const realButton = document.getElementById('real-button');
+        realButton.click();
+    });
+</script>
 </html>

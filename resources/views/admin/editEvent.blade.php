@@ -49,7 +49,33 @@
   </nav>
 
   <div class="container mt-4">
-    <div class="header-order d-flex gap-4 mb-4">
+    <div class="header-order d-flex gap-4 mb-2">
+      <div class="title">
+        <h1>Peserta Event</h1>
+      </div>
+    </div>
+    <div class="participant-all">
+          <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">Nama</th>
+                    <th scope="col">ID EcoClothes</th>
+                    <th scope="col">Nomor Telepon</th>
+                </tr>
+            </thead>
+            <tbody>
+                @foreach ($participants as $participant)
+                    <tr>
+                        <td>{{ $participant->name }}</td>
+                        <td>{{ $participant->eco_id }}</td>
+                        <td>{{ $participant->phone_number }}</td>
+                    </tr>
+                @endforeach
+            </tbody>
+        </table>
+    </div>
+    <br><br>
+    <div class="header-order d-flex gap-4 mt-4 mb-2">
       <div class="title">
         <h1>Edit Event</h1>
       </div>
@@ -78,6 +104,16 @@
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
             <input type="text" required value="{{$events->description}}" name="description" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tanggal</label>
+            <input type="text" required value="{{$events->date}}" name="description" class="form-control">
+        </div>
+
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Waktu</label>
+            <input type="text" required value="{{$events->clock}}" name="description" class="form-control">
         </div>
 
         <div class="container-button-event gap-3 d-flex mt-4 mb-4">

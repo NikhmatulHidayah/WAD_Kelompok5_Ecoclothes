@@ -38,28 +38,35 @@
                 <div class="swiper-slide">
                     <div class="image-merchant">
                         <div class="image-merchant-list">
-                            <img src="https://asset-a.grid.id/crop/0x38:1080x810/360x240/photo/2022/05/30/ahr0chm6ly9zy29udgvudc1ib3mzlteu-20220530052102.jpg" alt="">
+                            <img src="{{$merchant->picture_1}}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="image-merchant">
                         <div class="image-merchant-list">
-                            <img src="https://asset-a.grid.id/crop/0x38:1080x810/360x240/photo/2022/05/30/ahr0chm6ly9zy29udgvudc1ib3mzlteu-20220530052102.jpg" alt="">
+                            <img src="{{$merchant->picture_2}}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="image-merchant">
                         <div class="image-merchant-list">
-                            <img src="https://asset-a.grid.id/crop/0x38:1080x810/360x240/photo/2022/05/30/ahr0chm6ly9zy29udgvudc1ib3mzlteu-20220530052102.jpg" alt="">
+                            <img src="{{$merchant->picture_3}}" alt="">
                         </div>
                     </div>
                 </div>
                 <div class="swiper-slide">
                     <div class="image-merchant">
                         <div class="image-merchant-list">
-                            <img src="https://asset-a.grid.id/crop/0x38:1080x810/360x240/photo/2022/05/30/ahr0chm6ly9zy29udgvudc1ib3mzlteu-20220530052102.jpg" alt="">
+                            <img src="{{$merchant->picture_4}}" alt="">
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-slide">
+                    <div class="image-merchant">
+                        <div class="image-merchant-list">
+                            <img src="{{$merchant->picture_5}}" alt="">
                         </div>
                     </div>
                 </div>
@@ -91,7 +98,7 @@
                         <img src="{{$product->picture_1}}" alt="">
                     </div>
                     <div class="title-product-list">
-                        <a style="text-decoration: none !important;" href="/merchant/{{$id_merchant}}/product/{{$product->id_product}}">
+                        <a style="text-decoration: none !important;" href="/product/{{$product->id_product}}">
                             <h1>{{$product->name_product}}</h1>
                         </a>
                     </div>

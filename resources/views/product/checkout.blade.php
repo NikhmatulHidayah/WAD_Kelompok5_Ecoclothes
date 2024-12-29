@@ -17,67 +17,26 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/tzm9JFR/image.png">
 </head>
 <body>
-    <div class="image-product-detail">
-        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-    </div>
     <div class="frame-home">
-    <header class="hero" style="margin-top: 410px;">
-        <div class="title-product-detail">
-            <h1>Blus Wanita Ungu Kancing Lengan Rimple</h1>
-        </div>
-        <div class="category-product-detail" style="margin-top: 16px">
-            <h1>Berat: <span style="color: black;">200 </span><span style="color: black;">Gram</span></h1>
-            <h2>Kategori: <span style="color: #01ADB5;">Blouse Wanita</span></h2>
-            <h3>Size: <span style="color: black;">M </span></h3>
-        </div>
-        <div class="description-detail-product mt-3">
-            <h1 class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et dignissim velit. Ut rutrum tortor sed tellus hendrerit, at mollis quam mattis. Donec nulla libero, aliquet at finibus consequat, pretium eu urna. Praesent euismod congue luctus. Nulla facilisi. Suspendisse enim est, consectetur ut ligula at, semper finibus ex. Proin egestas suscipit interdum. Nunc neque velit, euismod sit amet nisl quis, consequat blandit ipsum. Phasellus id mi ut massa feugiat vulputate vel vitae ante.</h1>
-        </div>
-        <div class="head-isi-lemari">
-            <div class="title" style="margin-top: 20px;">
-                <h1>Foto Lainnya</h1>
+    <header class="hero">
+        <div style="display: flex; align-items: center; gap: 16px; border-radius: 8px; width: 100%;">
+            <div style="flex-shrink: 0;">
+                <img src="{{$carts->picture_1}}" alt="Blus Wanita Ungu" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px;">
+            </div>
+
+            <div>
+                <h2 style="margin: 0; font-size: 18px; font-weight: 500;">{{$carts->name_product}}</h2>
+                <p style="margin: 8px 0; font-size: 14px;"></p>Size: {{$carts->size}}</p>
+                <p style="margin: 4px 0; font-size: 14px;">Berat: {{$carts->weight}} Gram</p>
             </div>
         </div>
+
+        <div class="address-fill mb-3 mt-3">
+            <label for="exampleInputPassword1" class="form-label">Alamat</label>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="2"></textarea>
+        </div>
+
         
-        <div class="swiper">
-        <div class="swiper-wrapper" style="height: 200px;">
-            <div class="swiper-slide">
-                <div class="product-image-list">
-                    <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="product-image-list">
-                    <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="product-image-list">
-                    <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="product-image-list">
-                    <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-            <div class="swiper-slide">
-                <div class="product-image-list">
-                    <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
     </header>
 
     <div class="container-checkout-payment">
@@ -98,12 +57,12 @@
                 </div>
                 <div class="txt-coin-info mt-1">
                     <h1>Coin Tukar</h1>
-                    <h2>7 item</h2>
+                    <h2>{{$current_coin}} item</h2>
                 </div>
             </div>
             <div class="right">
                 <div class="btn-checkout">
-                    <button>Checkout</button>
+                    <button>Bayar</button>
                 </div>
             </div>
         </div>

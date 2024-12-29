@@ -18,17 +18,17 @@
 </head>
 <body>
     <div class="image-product-detail">
-        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
+        <img src="{{$products->picture_1}}" alt="">
     </div>
     <div class="frame-home">
     <header class="hero" style="margin-top: 410px;">
         <div class="title-product-detail">
-            <h1>Blus Wanita Ungu Kancing Lengan Rimple</h1>
+            <h1>{{$products->name_product}}</h1>
         </div>
         <div class="category-product-detail" style="margin-top: 16px">
-            <h1>Berat: <span style="color: black;">200 </span><span style="color: black;">Gram</span></h1>
-            <h2>Kategori: <span style="color: #01ADB5;">Blouse Wanita</span></h2>
-            <h3>Size: <span style="color: black;">M </span></h3>
+            <h1>Berat: <span style="color: black;">{{$products->weight}} </span><span style="color: black;">Gram</span></h1>
+            <h2>Kategori: <span style="color: #01ADB5;">{{$products->category}}</span></h2>
+            <h3>Size: <span style="color: black;">{{$products->size}} </span></h3>
         </div>
         <div class="description-detail-product mt-3">
             <h1 class="text-justify">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam et dignissim velit. Ut rutrum tortor sed tellus hendrerit, at mollis quam mattis. Donec nulla libero, aliquet at finibus consequat, pretium eu urna. Praesent euismod congue luctus. Nulla facilisi. Suspendisse enim est, consectetur ut ligula at, semper finibus ex. Proin egestas suscipit interdum. Nunc neque velit, euismod sit amet nisl quis, consequat blandit ipsum. Phasellus id mi ut massa feugiat vulputate vel vitae ante.</h1>
@@ -44,35 +44,35 @@
             <div class="swiper-slide">
                 <div class="product-image-list">
                     <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
+                        <img src="{{$products->picture_1}}" alt="">
                     </div>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="product-image-list">
                     <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
+                        <img src="{{$products->picture_2}}" alt="">
                     </div>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="product-image-list">
                     <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
+                        <img src="{{$products->picture_3}}" alt="">
                     </div>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="product-image-list">
                     <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
+                        <img src="{{$products->picture_4}}" alt="">
                     </div>
                 </div>
             </div>
             <div class="swiper-slide">
                 <div class="product-image-list">
                     <div class="image-image-list">
-                        <img src="https://images.tokopedia.net/img/cache/700/VqbcmM/2023/1/3/10941ce8-335f-45c2-8b1f-cbc3d8d89d5d.jpg" alt="">
+                        <img src="{{$products->picture_5}}" alt="">
                     </div>
                 </div>
             </div>
@@ -98,13 +98,17 @@
                 </div>
                 <div class="txt-coin-info mt-1">
                     <h1>Coin Tukar</h1>
-                    <h2>7 item</h2>
+                    <h2>{{$current_coin}} item</h2>
                 </div>
             </div>
             <div class="right">
-                <div class="btn-checkout">
-                    <button>Checkout</button>
-                </div>
+                <form action="/cart/product/{{$products->id_product}}" method="post">
+                @csrf
+                    <div class="btn-checkout">
+                        <button>Checkout</button>
+                    </div>
+                </form>
+                
             </div>
         </div>
     </div>

@@ -19,11 +19,12 @@ Route::get('/register', [authController::class, 'getRegister']);
 Route::get('/transaction/inprogres', [transactionController::class, 'getTrxInprogres']);
 
 Route::get('/event', [eventController::class, 'getEvent']);
-Route::get('/event/uuid', [eventController::class, 'getRegistEvent']);
+Route::get('/event/{id_event}', [eventController::class, 'getRegistEvent']);
+Route::post('/event/{id_event}/register/post', [eventController::class, 'postRegistEvent']);
 
 Route::get('/merchant/all', [productController::class, 'getAllMerchant']);
 Route::get('/merchant/{id_merchant}', [productController::class, 'getDetailMerchant']);
-Route::get('/merchant/uuid/product/id_product', [productController::class, 'getDetailProduct']);
+Route::get('/product/{id_product}', [productController::class, 'getDetailProduct']);
 
 Route::get('/admin/merchant/order/all', [merchantController::class, 'getAllOrder']);
 Route::get('/admin/merchant/setting', [merchantController::class, 'getMerchantDashboard']);
@@ -46,11 +47,11 @@ Route::get('/admin/merchant/article/{id_article}', [merchantController::class, '
 Route::post('/admin/merchant/article/edit/{id_article}/post', [merchantController::class, 'postEditArticle']);
 Route::post('/admin/merchant/article/delete/{id_article}', [merchantController::class, 'deleteArticle']);
 
+
 Route::post('/admin/merchant/product/add/{id_merchant}/post', [merchantController::class, 'postAddProduct']);
 
 Route::get('/admin/merchant/add/coin', [paymentController::class, 'getTopUpCoin']);
 Route::post('/admin/merchant/add/coin/post', [paymentController::class, 'postTopUpCoin']);
-
 
 
 Route::get('/admin/merchant/event', [merchantController::class, 'getListEvent']);
@@ -59,3 +60,6 @@ Route::get('/admin/merchant/event/edit/{id_event}', [merchantController::class, 
 Route::post('/admin/merchant/event/edit/{id_event}/post', [merchantController::class, 'postEditEvent']);
 Route::post('/admin/merchant/event/delete/{id_event}', [merchantController::class, 'deleteEvent']);
 Route::post('/admin/merchant/event/add/post', [merchantController::class, 'postAddEvent']);
+
+Route::post('/cart/product/{id_product}', [productController::class, 'postAddCart']);
+Route::get('/checkout/{id_user}', [productController::class, 'getCheckout']);

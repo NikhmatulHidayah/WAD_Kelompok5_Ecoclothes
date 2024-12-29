@@ -171,12 +171,16 @@ class merchantController extends Controller
         $picture = $request->input('picture');
         $description = $request->input('description');
         $type = $request->input('type');
+        $date = $request->input('date');
+        $clock = $request->input('clock');
     
         DB::table('events')->insert([
             'name_event' => $name_event,
             'quota' => $quota,
             'picture' => $picture,
             'description' => $description,
+            'date' => $date,
+            'clock' => $clock,
             'is_delete' => 0,
             'type' => $type,
             'created_at' => now(),
@@ -191,10 +195,19 @@ class merchantController extends Controller
         ->where('id_event', $id_event)
         ->first();
 
+        $participants = DB::table('participant_events')
+        ->join('users', 'participant_events.id_user', '=', 'users.id_user')
+        ->where('participant_events.id_event', $id_event)
+        ->select('users.name', 'users.phone_number', 'users.eco_id')
+        ->get();
+
+        //dd($participants);
+
         //dd($events);
         return view('admin.editEvent', [
             'id_event' => $id_event,
-            'events' => $events
+            'events' => $events,
+            'participants' => $participants
         ]);
     }
 

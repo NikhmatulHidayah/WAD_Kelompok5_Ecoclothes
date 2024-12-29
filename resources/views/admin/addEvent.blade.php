@@ -68,7 +68,7 @@
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Foto Event</label>
             <input type="text" required name="picture" class="form-control">
-            <div id="emailHelp" class="form-text">Masukkan foto dengan bentuk url</div>
+            <div id="emailHelp" class="form-text">masukkan foto dengan bentuk url</div>
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Tipe Event</label>
@@ -78,6 +78,17 @@
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Deskripsi</label>
             <input type="text" required name="description" class="form-control">
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Tanggal</label>
+            <input type="text" required name="date" class="form-control">
+            <div id="emailHelp" class="form-text">contoh: Sabtu, 9 Juli 2022</div>
+        </div>
+        <div class="mb-3">
+            <label for="exampleInputPassword1" class="form-label">Waktu</label>
+            <input type="text" required name="clock" class="form-control">
+            <div id="emailHelp" class="form-text">gunakan format waktu 24 jam</div>
+
         </div>
     
         <div class="btn-open-new-merchant mt-4 mb-4">

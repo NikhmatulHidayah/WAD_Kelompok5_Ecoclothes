@@ -32,7 +32,7 @@
             <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/add/event">Event</a>
+            <a class="nav-link" href="/admin/merchant/event">Event</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admin/merchant/article">Article</a>
@@ -67,7 +67,7 @@
         </div>
         <div class="title">
             <a style="text-decoration: none !important;" href="/merchant/{{$id_merchant}}/product/{{$product->id_product}}">
-                <h1>{{$product->name_product}}</h1>
+                <h1 style="font-size: 10px;font-size: 10px;font-weight: 500;text-decoration: none;color: #1C1C1E;margin-top:12px;">{{$product->name_product}}</h1>
             </a>
         </div>
         <div class="footer-product-list">

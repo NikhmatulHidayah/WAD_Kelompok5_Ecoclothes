@@ -32,13 +32,14 @@
     <div class="frame-home">
         <header class="hero" style="margin-top:15%;">
             <br>
+            @foreach ($events as $event)
             <div class="card-event mb-3">
                 <div class="photo-article-card">
-                    <img src="https://assets-a1.kompasiana.com/items/album/2021/12/28/kreasi-tas-olahan-kain-perca-dengan-aksen-bordir-karya-ibu-rumah-tangga-asal-malang-eva-sophia-hidayatip6gl-61ca093f06310e5f8818a302.jpg" alt="">
+                    <img src="{{$event->picture}}" alt="">
                 </div>
 
                 <div class="title-event-card mt-3">
-                    <h1>Membuat Karya Kolase Fesyen Sebagai upaya Pemanfaatan Limbah Kain dan Pakaian</h1>
+                    <h1>{{$event->name_event}}</h1>
 
                     <div class="sub-event">
                         <h3>Sabtu, 9 Juli 2022 | 16.00 WIB</h3>
@@ -46,66 +47,17 @@
 
                     <div class="footer-card-event">
                         <div class="time-event">
-                            <h3>Event Daring</h3>
+                            <h3>{{$event->type}}</h3>
                         </div>
                         <div class="button-join">
-                            <a href="/event/uuid">
+                            <a href="/event/{{$event->id_event}}">
                                 <button type="button" class="btn btn-join">Ikuti Event</button>
                             </a>
                         </div>
                     </div>
                 </div>
             </div>
-
-            <div class="card-event mb-3">
-                <div class="photo-article-card">
-                    <img src="https://assets-a1.kompasiana.com/items/album/2021/12/28/kreasi-tas-olahan-kain-perca-dengan-aksen-bordir-karya-ibu-rumah-tangga-asal-malang-eva-sophia-hidayatip6gl-61ca093f06310e5f8818a302.jpg" alt="">
-                </div>
-
-                <div class="title-event-card mt-3">
-                    <h1>Membuat Karya Kolase Fesyen Sebagai upaya Pemanfaatan Limbah Kain dan Pakaian</h1>
-
-                    <div class="sub-event">
-                        <h3>Sabtu, 9 Juli 2022 | 16.00 WIB</h3>
-                    </div>
-
-                    <div class="footer-card-event">
-                        <div class="time-event">
-                            <h3>Event Daring</h3>
-                        </div>
-                        <div class="button-join">
-                            <a href="">
-                                <button type="button" class="btn btn-join">Ikuti Event</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="card-event mb-3">
-                <div class="photo-article-card">
-                    <img src="https://assets-a1.kompasiana.com/items/album/2021/12/28/kreasi-tas-olahan-kain-perca-dengan-aksen-bordir-karya-ibu-rumah-tangga-asal-malang-eva-sophia-hidayatip6gl-61ca093f06310e5f8818a302.jpg" alt="">
-                </div>
-
-                <div class="title-event-card mt-3">
-                    <h1>Membuat Karya Kolase Fesyen Sebagai upaya Pemanfaatan Limbah Kain dan Pakaian</h1>
-
-                    <div class="sub-event">
-                        <h3>Sabtu, 9 Juli 2022 | 16.00 WIB</h3>
-                    </div>
-
-                    <div class="footer-card-event">
-                        <div class="time-event">
-                            <h3>Event Daring</h3>
-                        </div>
-                        <div class="button-join">
-                            <a href="">
-                                <button type="button" class="btn btn-join">Ikuti Event</button>
-                            </a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </header>
     </div>
 </body>

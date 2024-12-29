@@ -32,7 +32,7 @@
             <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/add/event">Event</a>
+            <a class="nav-link" href="/admin/merchant/event">Event</a>
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="/admin/merchant/article">Article</a>
@@ -63,7 +63,7 @@
     @foreach ($articles as $article)
       <div class="article-top-list">
         <div class="title-product-list">
-            <a style="text-decoration: none !important;" href="">
+            <a style="text-decoration: none !important;" href="/admin/merchant/article/{{$article->id_article}}">
                 <h1 style="font-size: 16px">{{$article->title}}</h1>
             </a>
         </div>

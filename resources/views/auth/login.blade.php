@@ -66,4 +66,11 @@
     document.getElementById('submit').click();
   });
 </script>
+
+@if (session('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+@endif
+
 </html>

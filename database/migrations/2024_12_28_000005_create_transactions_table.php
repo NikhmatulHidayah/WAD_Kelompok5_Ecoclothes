@@ -16,7 +16,7 @@ return new class extends Migration
         Schema::create('transactions', function (Blueprint $table) {
             $table->uuid('id_transaction')->primary()->default(Str::uuid());
             $table->uuid('id_user');
-            $table->uuid('id_cart');
+            $table->integer('total');
             $table->boolean('is_payment')->default(false)->nullable();
             $table->string('address')->nullable();
             $table->string('send_type')->nullable();
@@ -25,7 +25,6 @@ return new class extends Migration
             $table->timestamps();
 
             $table->foreign('id_user')->references('id_user')->on('users')->onDelete('cascade');
-            $table->foreign('id_cart')->references('id_cart')->on('carts')->onDelete('cascade');
         });
     }
 

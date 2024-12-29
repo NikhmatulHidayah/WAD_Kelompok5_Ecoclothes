@@ -82,6 +82,7 @@ class productController extends Controller
         $carts = DB::table('carts')
         ->join('products', 'carts.id_product', '=', 'products.id_product') // Join dengan tabel products
         ->where('carts.id_user', $id_user)
+        ->where('carts.is_delete', 0)
         ->select(
             'carts.id_cart',
             'carts.id_product',
@@ -90,8 +91,7 @@ class productController extends Controller
             'products.size',
             'products.weight'
         )
-        ->get()
-        ->first();
+        ->get();
 
         //dd($carts);
         return view('product.checkout', [

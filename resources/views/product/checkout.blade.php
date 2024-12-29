@@ -19,24 +19,58 @@
 <body>
     <div class="frame-home">
     <header class="hero">
-        <div style="display: flex; align-items: center; gap: 16px; border-radius: 8px; width: 100%;">
-            <div style="flex-shrink: 0;">
-                <img src="{{$carts->picture_1}}" alt="Blus Wanita Ungu" style="width: 150px; height: 150px; object-fit: cover; border-radius: 8px;">
+        @foreach ($carts as $cart)
+            <div class="display-card-all-cart">
+                <h2 style="margin: 0; font-size: 18px; font-weight: 500;">{{$cart->name_product}}</h2>
+                <p style="margin: 8px 0; font-size: 14px;"></p>Size: {{$cart->size}}</p>
+                <p style="margin: 4px 0; font-size: 14px;">Berat: {{$cart->weight}} Gram</p>
+            </div>
+            <hr>
+        @endforeach
+
+        <form action="/checkout/{{$id_user}}/post" method="post">
+            @csrf
+            <div class="address-fill mb-3 mt-3">
+                <label for="exampleInputPassword1" class="form-label">Alamat</label>
+                <textarea class="form-control" name="address" id="exampleFormControlTextarea1" rows="2"></textarea>
+            </div>
+            <div class="address-fill">
+                <label for="exampleInputPassword1" class="form-label">Pengiriman</label>
+                <select name="send_type" id="shippingMethod" class="form-select" aria-label="Default select example">
+                  <option value="Ambil di Merchant">Ambil di Merchant</option>
+                  <option value="JNE Sehari Sampai">JNE Sehari Sampai</option>
+                </select>
+            </div>
+            <div class="address-fill mt-3">
+                <label for="exampleInputPassword1" class="form-label">Total Pembayaran</label>
+
             </div>
 
-            <div>
-                <h2 style="margin: 0; font-size: 18px; font-weight: 500;">{{$carts->name_product}}</h2>
-                <p style="margin: 8px 0; font-size: 14px;"></p>Size: {{$carts->size}}</p>
-                <p style="margin: 4px 0; font-size: 14px;">Berat: {{$carts->weight}} Gram</p>
+            <div >
+                <div class="wrap-total d-flex">
+                <div class="left">
+                    <p>Biaya Aplikasi</p>
+                </div>
+                <div class="right">
+                    <input type="number" name="appFee" readonly value="2000">
+                </div>
+                </div>
             </div>
-        </div>
+            <div id="expeditionCost">
+                <div class="wrap-total d-flex">
+                <div class="left">
+                    <p>Biaya Ekspedisi</p>
+                </div>
+                <div class="right">
+                    <input id="costValue" name="expFee" type="number" readonly value="20000">
+                </div>
+                </div>
+            </div>
 
-        <div class="address-fill mb-3 mt-3">
-            <label for="exampleInputPassword1" class="form-label">Alamat</label>
-            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="2"></textarea>
-        </div>
-
+            <button type="submit" id="real-btn" hidden></button>
+        </form>
         
+
     </header>
 
     <div class="container-checkout-payment">
@@ -62,7 +96,7 @@
             </div>
             <div class="right">
                 <div class="btn-checkout">
-                    <button>Bayar</button>
+                    <button type="button" id="dummy">Bayar</button>
                 </div>
             </div>
         </div>
@@ -71,5 +105,33 @@
 
 </body>
 
+<script>
+    const shippingMethod = document.getElementById('shippingMethod');
+    const costValue = document.getElementById('costValue');
+    const expeditionCost = document.getElementById('expeditionCost');
 
+    function updateShippingCost() {
+        if (shippingMethod.value === "JNE Sehari Sampai") {
+            expeditionCost.style.display = "block";
+            costValue.value = 20000; 
+        } else if (shippingMethod.value === "Ambil di Merchant") {
+            expeditionCost.style.display = "block";
+            costValue.value = 0;
+        } else {
+            expeditionCost.style.display = "none";
+        }
+    }
+
+    shippingMethod.addEventListener('change', updateShippingCost);
+
+    document.addEventListener('DOMContentLoaded', updateShippingCost);
+</script>
+<script>
+    const dummyButton = document.getElementById('dummy');
+    const realButton = document.getElementById('real-btn');
+
+    dummyButton.addEventListener('click', function () {
+        realButton.click();
+    });
+</script>
 </html>

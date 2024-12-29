@@ -34,6 +34,27 @@ class User extends Authenticatable
     ];
 
     /**
+     * The primary key associated with the table.
+     *
+     * @var string
+     */
+    protected $primaryKey = 'id_user';
+
+    /**
+     * Indicates if the IDs are auto-incrementing.
+     *
+     * @var bool
+     */
+    public $incrementing = false;
+
+    /**
+     * The data type of the primary key.
+     *
+     * @var string
+     */
+    protected $keyType = 'string';
+
+    /**
      * Get the attributes that should be cast.
      *
      * @return array<string, string>

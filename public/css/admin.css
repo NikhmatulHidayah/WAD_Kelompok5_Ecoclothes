@@ -30,6 +30,16 @@ body a{
     font-size: 14px;
 }
 
+.delete-event button{
+    background-color: #eb2d3a;
+    width: 170px;
+    height: 40px;
+    border-radius: 4px;
+    border-style: none;
+    color: white;
+    font-size: 14px;
+}
+
 .card-merchant h2{
     font-size: 20px;
 }

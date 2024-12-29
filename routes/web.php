@@ -7,11 +7,13 @@ use App\Http\Controllers\transactionController;
 use App\Http\Controllers\eventController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\merchantController;
+use App\Http\Controllers\paymentController;
 
 
 Route::get('/', [homeController::class, 'getHome']);
 
 Route::get('/login', [authController::class, 'getLogin']);    
+Route::post('/login/user/post', [authController::class, 'postLogin']);    
 Route::get('/register', [authController::class, 'getRegister']);
 
 Route::get('/transaction/inprogres', [transactionController::class, 'getTrxInprogres']);
@@ -19,14 +21,13 @@ Route::get('/transaction/inprogres', [transactionController::class, 'getTrxInpro
 Route::get('/event', [eventController::class, 'getEvent']);
 Route::get('/event/uuid', [eventController::class, 'getRegistEvent']);
 
-
 Route::get('/merchant/all', [productController::class, 'getAllMerchant']);
-Route::get('/merchant/uuid', [productController::class, 'getDetailMerchant']);
+Route::get('/merchant/{id_merchant}', [productController::class, 'getDetailMerchant']);
 Route::get('/merchant/uuid/product/id_product', [productController::class, 'getDetailProduct']);
 
 Route::get('/admin/merchant/order/all', [merchantController::class, 'getAllOrder']);
 Route::get('/admin/merchant/setting', [merchantController::class, 'getMerchantDashboard']);
-Route::post('admin/merchant/logout', [MerchantController::class, 'logout'])->name('logout');
+Route::post('/admin/merchant/logout', [MerchantController::class, 'logout'])->name('logout');
 
 
 Route::get('/admin/merchant/add/branch', [merchantController::class, 'getAddMerchant']);
@@ -34,4 +35,16 @@ Route::post('/admin/merchant/add/branch/post', [merchantController::class, 'post
 
 Route::get('/admin/merchant/login', [merchantController::class, 'getLogin']);
 Route::post('/admin/merchant/login/post', [authController::class, 'postLogin']);
+
+Route::get('/admin/merchant/product/all/{id_merchant}', [merchantController::class, 'getProductList']);
+Route::get('/admin/merchant/product/add/{id_merchant}', [merchantController::class, 'getAddProduct']);
+
+Route::get('/admin/merchant/article', [merchantController::class, 'getListarticle']);
+Route::get('/admin/merchant/article/add', [merchantController::class, 'getAddArticle']);
+Route::get('/admin/merchant/article/add/post', [merchantController::class, 'postAddArticle']);
+
+Route::post('/admin/merchant/product/add/{id_merchant}/post', [merchantController::class, 'postAddProduct']);
+
+Route::get('/admin/merchant/add/coin', [paymentController::class, 'getTopUpCoin']);
+Route::post('/admin/merchant/add/coin/post', [paymentController::class, 'postTopUpCoin']);
 

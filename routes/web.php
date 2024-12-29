@@ -42,6 +42,9 @@ Route::get('/admin/merchant/product/add/{id_merchant}', [merchantController::cla
 Route::get('/admin/merchant/article', [merchantController::class, 'getListarticle']);
 Route::get('/admin/merchant/article/add', [merchantController::class, 'getAddArticle']);
 Route::post('/admin/merchant/article/add/post', [merchantController::class, 'postAddArticle']);
+Route::get('/admin/merchant/article/{id_article}', [merchantController::class, 'getEditArticle']);
+Route::post('/admin/merchant/article/edit/{id_article}/post', [merchantController::class, 'postEditArticle']);
+Route::post('/admin/merchant/article/delete/{id_article}', [merchantController::class, 'deleteArticle']);
 
 Route::post('/admin/merchant/product/add/{id_merchant}/post', [merchantController::class, 'postAddProduct']);
 

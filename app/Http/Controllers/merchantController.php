@@ -130,12 +130,24 @@ class merchantController extends Controller
             'articles' => $articles,
         ]);
     }
-
     public function getAddArticle(Request $request){
         return view("admin.addArticle");
     }
     public function postAddArticle(Request $request){
-        
+        $title = $request->input('title');
+        $author = $request->input('author');
+        $picture = $request->input('picture');
+        $content = $request->input('content');
+
+        DB::table('articles')->insert([
+            'title' => $title,
+            'author' => $author,
+            'picture' => $picture,
+            'content' => $content,
+        ]);
+
+        return redirect("/admin/merchant/article");
+
     }
 
 }

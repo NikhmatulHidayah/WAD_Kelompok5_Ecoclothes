@@ -56,6 +56,7 @@
     </div>
 
     <form action="/admin/merchant/article/add/post" method="post">
+      @csrf
         <div class="mb-3">
           <label for="exampleInputEmail1" class="form-label">Judul</label>
           <input type="text" required name="title" class="form-control">
@@ -71,7 +72,7 @@
         </div>
         <div class="mb-3">
             <label for="exampleInputPassword1" class="form-label">Isi Konten</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" rows="5"></textarea>
+            <textarea class="form-control" name="content" id="exampleFormControlTextarea1" rows="5"></textarea>
         </div>
     
         <div class="btn-open-new-merchant mt-4 mb-4">

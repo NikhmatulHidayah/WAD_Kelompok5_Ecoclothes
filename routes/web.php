@@ -41,7 +41,7 @@ Route::get('/admin/merchant/product/add/{id_merchant}', [merchantController::cla
 
 Route::get('/admin/merchant/article', [merchantController::class, 'getListarticle']);
 Route::get('/admin/merchant/article/add', [merchantController::class, 'getAddArticle']);
-Route::get('/admin/merchant/article/add/post', [merchantController::class, 'postAddArticle']);
+Route::post('/admin/merchant/article/add/post', [merchantController::class, 'postAddArticle']);
 
 Route::post('/admin/merchant/product/add/{id_merchant}/post', [merchantController::class, 'postAddProduct']);
 

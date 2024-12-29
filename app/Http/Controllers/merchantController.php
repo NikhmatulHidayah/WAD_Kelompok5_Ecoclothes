@@ -279,7 +279,8 @@ class merchantController extends Controller
     public function deleteArticle($id_article){
         $updated = DB::table('articles')
         ->where('id_article', $id_article)
-        ->update(['is_delete' => 1]);
+        ->delete();
+        // ->update(['is_delete' => 1]);
 
         if ($updated) {
             return redirect("/admin/merchant/article");

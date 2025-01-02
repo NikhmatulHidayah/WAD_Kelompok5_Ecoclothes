@@ -8,6 +8,7 @@ use App\Http\Controllers\eventController;
 use App\Http\Controllers\productController;
 use App\Http\Controllers\merchantController;
 use App\Http\Controllers\paymentController;
+use App\Http\Controllers\reservationController;
 use App\Http\Middleware\EnsureUserIsAuthenticated;
 
 
@@ -72,4 +73,14 @@ Route::middleware([EnsureUserIsAuthenticated::class])->group(function () {
 
     Route::get('/verifikasi/pembayaran/{id_transaction}', [paymentController::class, 'paymentVerif']);
     Route::post('/verifikasi/pembayaran/{id_transaction}/post', [paymentController::class, 'postPaymentVerif']);
+
+    Route::get('/reservation/create', [reservationController::class, 'getReservation']);
+    Route::get('/reservation/edit', [reservationController::class, 'getEditReservation']);
+    Route::post('/reservation/create/post', [reservationController::class, 'postReservation']);
+    Route::post('/reservation/edit/post', [reservationController::class, 'postEditReservation']);
+
+    Route::get('/admin/merchant/reservation', [reservationController::class, 'getReservationAdmin']);
+    Route::post('/admin/merchant/reservation/confirm/{id_reservation}', [reservationController::class, 'postReservationAdmin']);
+
+
 });

@@ -192,6 +192,38 @@
                     </div>
                 </div>
             </div>
+            <div class="reservation-widget">
+            <div class="head-widget-article">
+                    <div class="article-widget-title">
+                        <h3>Reservasi <span style="color:#FFB30D">Eco</span><span style="color:#01ADB5">Clothes</span></h3>
+                    </div>
+                    <div class="selengkapnya">
+                        <a style="text-decoration: none !important;" href="/reservation/create"><p>Buat Jadwal</p></a>
+                    </div>
+                </div>
+                <p class="sub-article-widget">Gunakan ini agar kamu ga perlu antri saat melakukan kurasi</p>
+
+                <div class="card-widget-transaction" style="height: 45px">
+                    <a href="/reservation/edit" style="text-decoration:none">
+                    <div class="content-widget-res gap-4 d-flex">
+                    <div class="left mt-1">
+                        <p>Jadwal Kamu: &nbsp</p>
+                        @if($reservations && $reservations->date)
+                            <p>{{ $reservations->date }}</p>
+                        @else
+                            <p>No reservation data available</p>
+                        @endif
+                        @if($reservations && $reservations->clock)
+                            <p>&nbsp{{ $reservations->clock }}</p>
+                        @else
+                            <p></p>
+                        @endif
+                    </div>
+                    </div>
+                    </a>
+                    
+                </div>
+            </div>
             <div class="article-widget">
                 <div class="head-widget-article">
                     <div class="article-widget-title">
@@ -273,6 +305,11 @@ document.addEventListener('DOMContentLoaded', () => {
 @if (session('success'))
     <script>
         alert("{{ session('success') }}");
+    </script>
+@endif
+@if (session('alert'))
+    <script>
+        alert("{{ session('alert') }}");
     </script>
 @endif
 

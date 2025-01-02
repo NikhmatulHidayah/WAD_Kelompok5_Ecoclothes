@@ -132,4 +132,19 @@ body a{
     font-weight: 400;
 }
 
+.content-widget-res{
+    padding: 4px;
+    justify-content: space-between;
+
+}
+
+.left p{
+    margin: 0px;
+}
+
+right a{
+    text-decoration: none;
+    font-size: 12;
+}
+
 

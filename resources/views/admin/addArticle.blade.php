@@ -38,6 +38,9 @@
             <a class="nav-link active" href="/admin/merchant/article">Article</a>
           </li>
           <li class="nav-item">
+            <a class="nav-link" href="/admin/merchant/reservation">Reservasi</a>
+          </li>
+          <li class="nav-item">
             <form action="/admin/merchant/logout" method="post">
                 @csrf
                 <button type="submit" class="btn btn-warning">Logout</button>

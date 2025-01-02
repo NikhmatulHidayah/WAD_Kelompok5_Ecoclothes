@@ -15,7 +15,7 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/tzm9JFR/image.png">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -36,6 +36,9 @@
           </li>
           <li class="nav-item">
             <a class="nav-link active" href="/admin/merchant/article">Article</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/admin/merchant/reservation">Reservasi</a>
           </li>
           <li class="nav-item">
             <form action="/admin/merchant/logout" method="post">

@@ -11,11 +11,20 @@ class homeController extends Controller
 {
     public function getHome(){
         $user = Auth::user();
+        $id_user = Auth::user()->id_user;
         $articles = DB::table(table: 'articles')->get();
+
+        $reservations = DB::table('reservations')
+        ->where('id_user', $id_user)
+        ->where('is_arrive', 0)
+        ->first();
+
+        //dd($reservations);
 
         return view("home.home", [
             'user' => $user,
-            'articles' => $articles
+            'articles' => $articles,
+            'reservations' => $reservations
         ]);
     }
 }

@@ -15,7 +15,7 @@
     <link rel="icon" type="image/x-icon" href="https://i.ibb.co.com/tzm9JFR/image.png">
 </head>
 <body>
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
@@ -23,10 +23,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-            <a class="nav-link " href="/admin/merchant/order/all">Order</a>
+            <a class="nav-link" href="/admin/merchant/order/all">Order</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" href="/admin/merchant/setting">Merchant</a>
+            <a class="nav-link " href="/admin/merchant/setting">Merchant</a>
           </li>
           <li class="nav-item">
             <a class="nav-link" href="/admin/merchant/add/coin">Coin</a>
@@ -38,7 +38,7 @@
             <a class="nav-link" href="/admin/merchant/article">Article</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="/admin/merchant/reservation">Reservasi</a>
+            <a class="nav-link active" href="/admin/merchant/reservation">Reservasi</a>
           </li>
           <li class="nav-item">
             <form action="/admin/merchant/logout" method="post">
@@ -54,34 +54,36 @@
   <div class="container mt-4">
     <div class="header-order d-flex gap-4">
       <div class="title">
-        <h1>Atur Product untuk {{$name_merchant}}</h1>
+        <h1>Reservasi Pengguna</h1>
       </div>
     </div>
-    <div class="btn-open-new-merchant mt-3 mb-4">
-        <a href="/admin/merchant/product/add/{{$id_merchant}}">
-            <button type="button">Tambah Product</button>
-        </a>
+
+    <div class="card-all-merchant">
+      @foreach ($reservations as $reservation)
+        <div class="card-merchant">
+            <h2 class="merchant-name">{{ $reservation->name }}</h2>
+            <p class="merchant-address">{{ $reservation->date }}</p>
+            <p class="merchant-work-hours">{{ $reservation->clock }}</p>
+              <form action="/admin/merchant/reservation/confirm/{{ $reservation->id_reservation }}" method="post">
+                @csrf
+                <button class="btn btn-warning" style="" id="real-btn" type="submit">Konfirmasi Kedatangan</button>
+            </form>
+        </div>
+      @endforeach
     </div>
-    <div class="product-container d-flex gap-3">
-    @foreach ($products as $product)
-      <div class="product-top-list">
-        <div class="image-prodduct-list">
-            <img src="{{$product->picture_1}}" alt="">
-        </div>
-        <div class="title">
-            <a style="text-decoration: none !important;" href="/merchant/{{$id_merchant}}/product/{{$product->id_product}}">
-                <h1 style="font-size: 10px;font-size: 10px;font-weight: 500;text-decoration: none;color: #1C1C1E;margin-top:12px;">{{$product->name_product}}</h1>
-            </a>
-        </div>
-        <div class="footer-product-list">
-            <div class="size">
-                <h1>Size: {{$product->size}}</h1>
-            </div>
-        </div>
-      </div>
-    @endforeach
-    </div>
-    
+
   </div>
 </body>
+
+@if (session('success'))
+    <script>
+        alert("{{ session('success') }}");
+    </script>
+@endif
+@if (session('alert'))
+    <script>
+        alert("{{ session('alert') }}");
+    </script>
+@endif
+
 </html>
